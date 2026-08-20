@@ -16,7 +16,12 @@ something re-derive it or does an adjective assert it — *fast*, *safe*,
 whoever reads its output. **Congruency** holds a claim against another claim:
 two statements that disagree are worse than either alone, because a human
 reader gets suspicious and checks, while an agent picks one at full confidence
-and builds on it. **Disambiguation** holds a claim against its reader: one
+and builds on it. Two places one decision would have to change together, where
+nothing goes red when only one moves and nothing on record says why there are
+two, are already incongruent — the promise to stay in step is a claim nobody
+wrote down. The finding is that silence, never the copy, and splitting them on
+purpose is as good a remedy as merging. **Disambiguation** holds a claim
+against its reader: one
 sentence, two readings, two different artifacts. Sweep in that order; each
 hands the next its suspects. None of the three asks whether a thing should
 exist at all — that is `parsimony`, and it is a separate sitting on purpose.
