@@ -1,0 +1,11 @@
+{
+  "name": "sweeps",
+  "description": "Two paired repository sweeps with opposite calibrations: truing finds what a repo says that is not so, parsimony proposes what should stop existing.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Mattias Petter Johansson",
+    "url": "https://github.com/mpj"
+  },
+  "homepage": "https://github.com/mpj/mpj-skills",
+  "repository": "https://github.com/mpj/mpj-skills"
+}
