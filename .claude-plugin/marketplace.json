@@ -18,7 +18,13 @@
       "homepage": "https://github.com/mpj/mpj-skills",
       "repository": "https://github.com/mpj/mpj-skills",
       "category": "code-quality",
-      "tags": ["review", "documentation", "refactoring", "simplification"]
+      "tags": [
+        "review",
+        "documentation",
+        "refactoring",
+        "simplification"
+      ],
+      "license": "MIT"
     }
   ]
 }

@@ -7,5 +7,6 @@
     "url": "https://github.com/mpj"
   },
   "homepage": "https://github.com/mpj/mpj-skills",
-  "repository": "https://github.com/mpj/mpj-skills"
+  "repository": "https://github.com/mpj/mpj-skills",
+  "license": "MIT"
 }
