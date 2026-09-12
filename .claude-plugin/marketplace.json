@@ -25,6 +25,26 @@
         "simplification"
       ],
       "license": "MIT"
+    },
+    {
+      "name": "noun",
+      "source": "./plugins/noun",
+      "description": "The Noun Project icon API, as one skill: sign a request with the keys in the environment, search and fetch icons, download them in a colour, and mind the quota and the attribution.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Mattias Petter Johansson",
+        "url": "https://github.com/mpj"
+      },
+      "homepage": "https://github.com/mpj/mpj-skills",
+      "repository": "https://github.com/mpj/mpj-skills",
+      "category": "integration",
+      "tags": [
+        "icons",
+        "api",
+        "oauth",
+        "noun-project"
+      ],
+      "license": "MIT"
     }
   ]
 }

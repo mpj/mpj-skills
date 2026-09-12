@@ -22,6 +22,18 @@ They are two skills rather than one because the calibrations cannot share a
 page: a run that has to be right most of the time will never say the thing worth
 saying in the second one.
 
+## noun
+
+One skill, **`noun-api`**, for the Noun Project icon API: how to sign a request
+with the two keys in the environment (`NOUN_API_KEY`, `NOUN_API_SECRET`), what
+to ask for, and what to remember — the asset URLs expire within the hour, every
+icon comes with the attribution you owe, and the quota is monthly. Checked live
+against the API rather than transcribed from its documentation.
+
+```
+/plugin install noun@mpj
+```
+
 ## Install
 
 ```
