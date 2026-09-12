@@ -75,10 +75,14 @@ to get an SVG URL on each hit without a second call. Pages are walked with the
 where `icon` is the same object as a search hit, always with `icon_url`.
 
 **Download.** `GET /icon/{id}/download?filetype=svg&color=4e6b5a` returns the
-file inline as `{ base64_encoded_file, ... }`, not as bytes. `color` is a hex
-triplet without the hash. `filetype` is `svg` or `png`; `size` in pixels, 20
-to 1200, is for PNG only and is a 400 on SVG. Decode the base64 and serve or
-store the result yourself.
+file inline as `{ base64_encoded_file, ... }`, not as bytes. `color` is
+required, a hex triplet without the hash; without it the call is a 400,
+"Must provide a hexadecimal color value". `filetype` is `svg` or `png`;
+`size` in pixels, 20 to 1200, is for PNG only and is a 400 on SVG. Decode the
+base64 and serve or store the result yourself. The SVG comes with an XML
+header, a `<title>`, `width` and `height` in points, and the colour baked in
+as `fill:black` in a `<style>` or as an attribute, so to let it take the text
+colour of a page, strip those and set `fill="currentColor"` on the root.
 
 **Suggestions.** `GET /icon/autocomplete?query=hou&limit=3` returns
 `{ suggestions: [...] }`, ten at most.
