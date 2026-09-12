@@ -15,11 +15,13 @@ An agent deep in a context assumes its reader is in the same context and has rea
 
 **The checkpoint.** The end of every part, and it must be self-descriptive: a reader who has never met the form should see on sight what it is and what it wants from him. A closing paragraph in the writer's voice was tried first and ruled out by the reader on 2026-09-12: it read as an unexplained inset, and it was not clear what it was for. The model is the end of a chapter in David Deutsch's *The Beginning of Infinity*: labelled blocks, each label a plain heading in capitals on its own line, the content beneath it. Three blocks, in this order, outside the prose and not counted as prose:
 
-TERMINOLOGY. Each term the part introduced, on its own line, plain (its bold was spent at the defining occurrence in the prose), followed by a one-line definition in plain words. This is the glossary the reader scans back to, and the ground line's list mirrors it; a definition here may be sharper than the prose's, never looser.
+**TERMINOLOGY.** Each term the part introduced, on its own line, the term in *italics* (its bold was spent at the defining occurrence in the prose), followed by a definition of a sentence or two in plain words, as on Deutsch's page. This is the glossary the reader scans back to, and the ground line's list mirrors it; a definition here may be sharper than the prose's, never looser.
 
-SUMMARY. One or two sentences stating what the part established, so a reader who stops here knows what he holds. A statement of what was said, never a preview of what comes next; a preview is signposting and the tightening seat may cut it.
+**SUMMARY.** A short paragraph, one to three sentences, stating what the part established, so a reader who stops here knows what he holds. A statement of what was said, never a preview of what comes next; a preview is signposting and the tightening seat may cut it.
 
-CONTINUE OR ASK. One line in the writer's voice, varied from part to part: say continue, or name any term above to have it explained at your depth before anything else moves.
+**CONTINUE OR ASK.** One line in the writer's voice, varied from part to part: say continue, or name any term above to have it explained at your depth before anything else moves.
+
+The labels are set in bold capitals, as printed. Deutsch's page carries a further block between the two, the meanings of the book's title encountered in the chapter; it has no standing place in a serial unless the piece carries a through-line term of its own, in which case it takes that term's name.
 
 The blocks are the reader's specification, like the masthead: an editor may sharpen a definition and may not cut one, and the tightening seat may not touch a label. The prose above them stays clean of orientation for the same reason the masthead exists: the frame carries it.
 
