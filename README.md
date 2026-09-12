@@ -49,12 +49,15 @@ were filled by audition and each has lost an argument to the writer on the
 merits. Model-agnostic, and the seats should sit on different families: the
 provenance records what happened when they did not.
 
-**`serial`** delivers an explanation one part at a time, inverted pyramid, at
-most three new terms a part and each defined before anything leans on it, a
-masthead above every part for the reader landing from another tab, and a
-checkpoint after every part that invites them to continue or to ask about a
-word. It exists because an agent deep in a context assumes its reader is in it
-too, and delivers in blocks too large to stop and ask about.
+**`serial`** explains a thing to one person one part at a time, shaped by what
+they already know. An interviewer seat probes first, in a texture anchored on
+Brian Lamb's questions; a dense expert statement, serial 0, stands as the
+pillar; every later part is written on demand from the reader's own words, one
+rung down, with a detour when a misconception shows. A masthead above every
+part for the reader landing from another tab, and a labelled block below it,
+terminology, summary, continue or ask. It exists because an agent deep in a
+context assumes its reader is in it too, and delivers in blocks too large to
+stop and ask about.
 
 ## Install
 
