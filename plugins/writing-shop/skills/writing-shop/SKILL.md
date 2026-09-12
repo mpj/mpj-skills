@@ -1,6 +1,6 @@
 ---
 name: writing-shop
-description: Write a piece of prose for a person in a settled, anchored voice, edited by a shop of seats that argue by letter: a structure advisor before the draft, a precision editor and a tightening advisor after it, a fact check of every concrete against the world, and a mechanical gate last Use when asked for a written-up explainer, retrospective or piece "in the voice", or to run the shop or a consultation on a text. Model-agnostic; seats may sit on different models and should. Sibling of `serial`, which delivers the result part by part.
+description: Write a piece of prose for a person in a settled, anchored voice, edited by a shop of seats that argue by letter: a structure advisor before the draft, a precision editor and a tightening advisor after it, a fact check of every concrete against the world, and a mechanical gate last. Use when asked for a written-up explainer, retrospective or piece "in the voice", or to run the shop or a consultation on a text. The prose seats sit on DeepSeek V4 Pro by the reader's ruling, never on a Claude model; only the fact check may run on Claude. Sibling of `serial`, which delivers the result part by part.
 ---
 
 # writing-shop
