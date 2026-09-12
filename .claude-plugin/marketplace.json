@@ -45,6 +45,27 @@
         "noun-project"
       ],
       "license": "MIT"
+    },
+    {
+      "name": "writing-shop",
+      "source": "./plugins/writing-shop",
+      "description": "An editorial shop for prose an agent writes to a person: an anchored head-writer voice, advisors who argue by letter, a fact check against the world, a mechanical gate; and serial, the part-by-part delivery that lets the reader stop and ask.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Mattias Petter Johansson",
+        "url": "https://github.com/mpj"
+      },
+      "homepage": "https://github.com/mpj/mpj-skills",
+      "repository": "https://github.com/mpj/mpj-skills",
+      "category": "writing",
+      "tags": [
+        "writing",
+        "voice",
+        "editing",
+        "explanation",
+        "fact-checking"
+      ],
+      "license": "MIT"
     }
   ]
 }
