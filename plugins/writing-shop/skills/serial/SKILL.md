@@ -43,7 +43,7 @@ The end of every part, and it must be self-descriptive: a reader who has never m
 
 **SUMMARY.** A short paragraph, one to three sentences, stating what the part established, so a reader who stops here knows what he holds. A statement of what was said, never a preview of what comes next; a preview is signposting and the tightening seat may cut it.
 
-**CONTINUE OR ASK.** One line in the writer's voice, varied from part to part: say continue, or name any term above to have it explained at your depth before anything else moves.
+**CONTINUE OR ASK.** One line in the writer's voice, varied from part to part: say continue, or name any term above to have it explained at your depth before anything else moves. **The label is the exact set of moves the reader has, and nothing else.** When a part hands the reader an action as well (run the experiment, apply the change, choose between two things), the label names it: CONTINUE, ASK OR RUN. When the serial has reached its floor and there is no next rung, CONTINUE comes off the label: ASK, or ASK OR RUN. A move offered in the line beneath the label that the label does not name is a hidden option, and the reader called one out on 2026-09-12 ("if it's actually continue, ask, or run, then it should be clear"). The line under the label may not preview the next part either; that is signposting, and the tightening seat may cut it.
 
 Deutsch's page carries a further block between the first two, the meanings of the book's title encountered in the chapter; it tracks that book's through-line and has no standing place in a serial. A piece with a carried through-line term of its own may add such a block, labelled after that term, and otherwise leaves it out.
 
