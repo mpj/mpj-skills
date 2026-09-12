@@ -43,11 +43,12 @@ Scored three ways: frame-marker regexes (deterministic), the lint gate, and two 
 
 ### The seats
 
-- **Head writer: `openai/gpt-5.6-sol`.** Only clean lint, top three with both judges, first with one, and 60% cheaper than Opus 5. Its own fault is preciousness; Kimi called it "the most polished and the second-most precious."
-- **Head writer, alternate: `anthropic/claude-fable-5`**, when voice matters more than cost. Kimi's pick, on the grounds that its faults are "three sentences an editor can strike in thirty seconds" while its virtues cannot be edited into the others. Double Opus 5's price.
-- **Structure advisor: `anthropic/claude-opus-5`.** The density that hurts its prose is an asset when it is ruling on shape rather than writing.
-- **Precision editor and tightening advisor: any non-Claude family**, for the judge-bias reason above. Never let a Claude model rule on Claude prose.
-- **Rejected: `google/gemini-3.1-pro-preview`.**
+Ruled by the reader on 2026-09-12 (run 5, `provenance.md`), overriding the ranking above for the writer's seat. The table is evidence about prose quality; the seating is a decision about whose fingerprint the prose carries, and that decision is the reader's.
+
+- **Head writer: `deepseek/deepseek-v4-pro`, always and explicitly.** The shop's purpose is to break free of Claude's fingerprinting and overbearing mannerisms, and a Claude model in the writer's seat, however it ranks, hands the voice back to the family the reader is escaping. Fable 5 reads better than Opus 5; it is still excluded, because the reader would rather hold this seat under his own control than under Anthropic's post-training. This is a ruling, not a bake-off result: Sol and Fable outrank DeepSeek in the table and do not get the seat. The seat runs as one stateful conversation with the anchors, the standing prompt, the prohibitions and the ground-truth sheet in the system message; budget the completion ceiling at 20,000 tokens or more (run 2 lost a turn to a 6,000-token ceiling before the prose began; run 5 ran at 30,000), and expect most output tokens to be hidden reasoning.
+- **Structure advisor, precision editor, tightening advisor: DeepSeek V4 Pro as well**, by the reader's ruling of the same morning ("Anthropic only on the veridicality agent"). The cost is on the record: run 3 seated all four prose seats on one model and the in-family editor caught a sixth of what the cross-family editor caught, and echoed the writer's own error. Whether the editing seats move to another non-Claude family to recover that is the reader's call and is open; a Claude model in any prose seat is not.
+- **Veridicality check: an agent with tools.** The family rule does not constrain it; the check is against the world, not the prose.
+- **Rejected: `google/gemini-3.1-pro-preview`** (bake-off). **Excluded from the writer's seat: every Claude model** (ruling).
 
 ## The larger effect, which is not the model
 

@@ -2,6 +2,8 @@
 
 The standing instruction for the writing agent. The core of it was written *by* the head writer, in character, at the reader's request ("write the instruction prompt the way Spolsky would write the prompt"); the sections after it are standing law accumulated from the audition's editors. An agent taking the head-writer seat gets this whole file.
 
+> **The seat's model is fixed: DeepSeek V4 Pro (`deepseek/deepseek-v4-pro`), always, never a Claude model.** Ruled by the reader 2026-09-12; the reason (the shop exists to get out from under Claude's fingerprint and mannerisms, and the reader keeps this seat under his own control) is in `model-selection.md`. An orchestrator that finds itself on a Claude model does not take this seat itself; it seats DeepSeek and relays.
+
 > **Anchoring is not optional.** Before writing, fetch verbatim passages (300+ words each, original punctuation intact) from at least three Joel on Software essays — The Law of Leaky Abstractions, Things You Should Never Do, and the Unicode piece are the proven set — and write every draft as a *continuation* of that texture. Naming the author without his text in context regresses the output to the model's default register. This is the strongest finding in [`research.md`](research.md).
 
 ---

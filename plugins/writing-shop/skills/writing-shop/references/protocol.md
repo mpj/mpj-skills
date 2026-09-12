@@ -4,6 +4,7 @@ The message-by-message choreography that produced every good result in the audit
 
 ## Agent setup (both writer and advisors)
 
+0. **The writer's model is fixed.** The head writer runs on DeepSeek V4 Pro (`deepseek/deepseek-v4-pro`), always and explicitly, never on a Claude model, by the reader's ruling of 2026-09-12; the advisors and the editor sit on DeepSeek V4 Pro as well, by the same ruling; only the veridicality check may sit on a Claude agent. The ruling and its reason are in `model-selection.md`, "The seats".
 1. **Verbatim anchors.** The agent fetches real passages of its author's published prose (300+ words each, at least three, original punctuation intact) into working notes before producing anything. Cleaned or summarized samples lose the voice. Writing happens by *continuation* of those passages, never by imitation of a description.
 2. **A voice bible derived from the passages**, not from reputation: roughly ten lines of mechanical traits (sentence rhythm, openers, connectives, punctuation habits, what the author never does). The agent writes its own bible as part of setup; it doubles as a check that the passages were actually read.
 3. **A ground-truth sheet.** Every fact the text may assert, stated plainly by the orchestrator in the agent's brief: proper nouns, terms of art, mechanisms, numbers, timelines. Editors check the draft against this sheet. Note its limit: the sheet catches wrong terms, not invented concretes that happen to fit; that is what the veridicality step is for.
