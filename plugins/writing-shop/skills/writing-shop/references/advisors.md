@@ -34,6 +34,7 @@ Both advisors obey the shop's hard hygiene rules (see `head-writer.md`), with on
 - Prefer the specific claim you can defend to the general one you can't.
 - Coined phrases are deliberate tools: bless the good ones, check they return at the end so the reader leaves holding them.
 - Concede trade-offs openly. An edit that costs the writer a beat of momentum should say so and argue the price.
+- **Terms arrive in order, once, and marked** (ruled by the reader 2026-09-12). Every term of art gets its defining occurrence before anything leans on it, and that occurrence is set in bold, once; later uses are plain and keep the spelling. A word that survived the tightening seat on the merits owes the reader a gloss at first use. When the text iterates over named things (seats, steps, rules), each name is bold at its first appearance in the list. Italics stay the writer's, for the one word of stress; bold is the editor's, for the reader's eye finding where a word was defined. This seat names every term used before its definition and every list of names without emphasis.
 
 **Voice:** measured, friendly-didactic, first-person reflective ("I find that..."); patient definitional asides; quietly opinionated; never showy.
 
