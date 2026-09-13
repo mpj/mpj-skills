@@ -10,6 +10,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync, globSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import { join, basename } from 'node:path';
 
 const ROOT = new URL('..', import.meta.url).pathname;
@@ -37,11 +38,25 @@ test('every reference file the prose names exists on disk', () => {
 });
 
 test('no living author\'s prose is committed: the anchor cache stays git-ignored', () => {
-  const committed = globSync('**/*.local.md', { cwd: ROOT, exclude: p => p.includes('node_modules') });
-  assert.deepEqual(committed, [],
-    'a *.local.md file is in the working tree; anchors are fetched per machine and never committed');
+  // The invariant is "not committed", never "not present". A machine that has
+  // correctly fetched its anchors has the file in the working tree, and this
+  // test must stay green there, so it asks git what is tracked and not the disk.
+  const tracked = execFileSync('git', ['ls-files', '*.local.md'], { cwd: ROOT, encoding: 'utf8' }).trim();
+  assert.equal(tracked, '',
+    'a *.local.md file is tracked; anchors are fetched per machine and never committed');
   const ignore = readFileSync(join(ROOT, '.gitignore'), 'utf8');
   assert.match(ignore, /^\*\.local\.md$/m, '.gitignore must still carry the anchor pattern');
+});
+
+test('the two files that name the anchor cache agree on how it is spelled', () => {
+  // These are the only two places the filename appears, and the existence test
+  // skips them by design, so nothing else holds them together. A session reading
+  // one file and a session reading the other must write the same path.
+  const pattern = read(`${SKILL}/references/protocol.md`).match(/`references\/anchors\/<author>\.local\.md`/);
+  assert.ok(pattern, 'protocol.md must state the anchor cache convention');
+  const concrete = read(`${SKILL}/references/head-writer.md`).match(/`references\/anchors\/([a-z-]+)\.local\.md`/);
+  assert.ok(concrete, 'head-writer.md must name its own anchor cache file');
+  assert.equal(concrete[1], 'spolsky', 'the writer\'s anchor file is named for its author, lowercased');
 });
 
 test('every anchor file that does ship says on its first line what it is', () => {

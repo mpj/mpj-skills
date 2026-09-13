@@ -40,7 +40,7 @@ export function runGate(gatePath, filePath) {
 // its own reference file. Extracted and imported rather than copied.
 export const LEAK_DOC = 'plugins/rung/skills/rung/references/leak-check.md';
 
-export async function importLeakCheck(repoRoot) {
+export function leakCheckPath(repoRoot) {
   const doc = readFileSync(join(repoRoot, LEAK_DOC), 'utf8');
   const blocks = [...doc.matchAll(/```js\n([\s\S]*?)```/g)].map(m => m[1]);
   if (blocks.length !== 1) {
@@ -49,5 +49,9 @@ export async function importLeakCheck(repoRoot) {
   const dir = mkdtempSync(join(tmpdir(), 'rung-leak-'));
   const path = join(dir, 'leak-check.mjs');
   writeFileSync(path, blocks[0]);
-  return import(`file://${path}`);
+  return path;
+}
+
+export async function importLeakCheck(repoRoot) {
+  return import(`file://${leakCheckPath(repoRoot)}`);
 }

@@ -56,3 +56,34 @@ test('the threshold is a setting the caller can move, as the document says', () 
 test('words() folds case and drops punctuation', () => {
   assert.deepEqual(words('Hey -- "There", you!'), ['hey', 'there', 'you']);
 });
+
+test('the command line reports a seat with no anchors instead of passing in silence', async () => {
+  // The shortfall path: a seat whose supply closed has no anchor file, and a
+  // check that skips quietly is a check nobody can rely on.
+  const { execFileSync } = await import('node:child_process');
+  const { writeFileSync, mkdtempSync } = await import('node:fs');
+  const { join } = await import('node:path');
+  const { tmpdir } = await import('node:os');
+  const { leakCheckPath } = await import('./gate.mjs');
+
+  const dir = mkdtempSync(join(tmpdir(), 'rung-cli-'));
+  const delivery = join(dir, 'part.md');
+  const anchors = join(dir, 'anchors.md');
+  writeFileSync(delivery, 'Abstractions fail sometimes a little sometimes a lot, he warned.');
+  writeFileSync(anchors, ANCHOR);
+  const bin = await leakCheckPath(ROOT);
+
+  const run = args => {
+    try { return { code: 0, out: execFileSync(process.execPath, [bin, ...args], { encoding: 'utf8' }) }; }
+    catch (e) { if (e.status == null) throw e; return { code: e.status, out: e.stdout }; }
+  };
+
+  assert.match(run([delivery]).out, /no anchor file given/);
+  assert.equal(run([delivery]).code, 1);
+  assert.match(run([delivery, anchors]).out, /words reproduced from the anchors/);
+  assert.equal(run([delivery, anchors]).code, 1);
+
+  writeFileSync(delivery, 'Every interface hides something and the thing it hides gets out eventually.');
+  assert.match(run([delivery, anchors]).out, /ok clean/);
+  assert.equal(run([delivery, anchors]).code, 0);
+});

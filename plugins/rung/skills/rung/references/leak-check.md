@@ -17,7 +17,8 @@ The reference implementation, exit 0 clean and exit 1 with findings printed:
 ```js
 #!/usr/bin/env node
 // Usage: node leak-check.mjs <delivery> <anchor-file> [...more anchor files]
-import { readFileSync } from 'node:fs';
+import { readFileSync, realpathSync } from 'node:fs';
+import { pathToFileURL } from 'node:url';
 
 export const N = 8;                       // the run length; see the file above
 
@@ -50,7 +51,10 @@ export function leaks(delivery, anchors, n = N) {
   return found;
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+// Run directly, not imported. realpathSync matters: a temporary directory on
+// macOS is reached through a symlink, and the naive comparison silently does
+// nothing there, which is how this branch first failed its own test.
+if (process.argv[1] && import.meta.url === pathToFileURL(realpathSync(process.argv[1])).href) {
   const [delivery, ...anchorPaths] = process.argv.slice(2);
   if (!anchorPaths.length) {
     console.log('  x no anchor file given: the seat is on the shortfall path, or the call is wrong');
