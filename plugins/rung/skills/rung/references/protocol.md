@@ -32,9 +32,9 @@ The map is revisable after the interview. A node the reader already holds is pru
 
 ### The pillar, and every part
 
-8. The writer formats the **pillar** in one call: the position line, the settled pillar sentence with any canonical formulation quoted and attributed, a TERMINOLOGY block drawn from the map's definitions, and CONTINUE OR ASK. Plain declarative register, no scene, no analogy, no wisecrack.
+8. The writer formats the **pillar** in one call: the position line, the settled pillar sentence with any canonical formulation quoted and attributed, a TERMINOLOGY block drawn from the map's definitions, and the closing label with its line. Plain declarative register, no scene, no analogy, no wisecrack.
 9. The **root-conformance gate** runs inside the veridicality check, on the pillar, every time: every term an exact map node, every relation stated or deliberately omitted without changing scope, no new commitment in the TERMINOLOGY block, a disposition per clause. A failure blocks delivery and takes one constrained rewrite.
-10. Each later **part** is written after the reader replies: one rung down, aimed at the deepest node the ledger shows ungrounded, built from what he holds. Then the lint gate, then delivery.
+10. Each later **part** is written after the reader replies: one rung down, aimed at the deepest node the ledger shows ungrounded, built from what he holds. Then the interviewer reads the finished part and writes the one question that goes under its closing label. Then the lint gate, then delivery. Both lines under the label are their seats' own words and the relay assembles without editing either.
 
 The relay counts the prose words before delivery, between the question line and the TERMINOLOGY label. The writer's own count is not a check: in the validation run it reported 190 where the relay counted 246.
 
