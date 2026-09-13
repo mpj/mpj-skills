@@ -131,3 +131,17 @@ The diagnosis is exact. A reader who types "continue" may hold the part or may n
 **What went in.** The label becomes I UNDERSTAND, ASK OR GO ON. The third move is the relay's addition and it is there so nobody has to claim understanding in order to keep moving; a reader who says "go on" makes no claim, takes no follow-up, and is routed as the fifth route, no claim made. Under the label there are now two lines: the writer's, naming the moves, and the interviewer's one question about that part. Moving the follow-up inside the checkpoint is what makes the reader's proposal free, because the question stops being a turn of its own and the next part is still the first thing he sees after he replies.
 
 **Principles added.** A move the reader makes is evidence or it is nothing, so name the moves after what they claim rather than after what they do next. Where a form already trusts a claim, route the common case into that trust rather than building a second mechanism beside it. And when the ledger is empty, say the map chose; do not let a deterministic walk of the graph wear the ledger's clothes.
+
+## Authorship is not holding (2026-09-13)
+
+Part 6 of the tocsin session leaned on three terms from the reader's own constitution, the bound, the course and the account, and the relay told the writer to treat all three as held because the reader had written the document that defines them. He came back and asked for all three.
+
+His correction went further than the mistake. "yes i wrote it but i also write so many things with ai that i cannot possibly keep tabs on or pay attention to all the things i've generated. i need to be reminded and the question of whether it's my authorship is not as relevant as it used to be back in the day." And on which terms need giving back: "often the most complicated words are, or sometimes just simple but rare words like 'monad' or 'ontic.' i need to be reminded of even when i brought them in, just because it's been a few weeks and i've been mingled up in another project at work, that kind of thing".
+
+He also said the guess was a reasonable one, which is why it went in the skill rather than in a note: "it makes sense that you would ask it to hold it back though. that means it's likely that it will also make sense for another agent to do so."
+
+The ledger had no evidence about those three nodes either way, and the relay filled the hole with an inference dressed as evidence. That is the one move the assessor seat exists to prevent, and it was made outside the seat, by the agent that is supposed to only relay and check.
+
+**What went in.** A node is grounded by the ledger or by a claim the reader makes in this session, and by nothing else. An agent tempted to prune a node on authorship sends the interviewer at it instead, which costs one clause.
+
+**Principle added.** Provenance of a term says nothing about whether it is in the reader's hand. In a working life where a person generates far more text than they can hold, having written something is close to no evidence at all, and the rarer and harder the word the less it means.
