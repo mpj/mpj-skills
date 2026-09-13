@@ -9,7 +9,7 @@ The first run produced a piece that passed every gate and still read wrong to it
 > "I mention it now because you should know where this ends up."
 > "Filling those seats required an audition, and the audition is where the interesting thing happened."
 
-Neither trips any of the gate's four rules. Every word in them is ordinary. The fault is **discourse signposting**: announcing the shape of the text rather than carrying content, telegraphing that something notable is coming, explaining the writer's own organizational choices, and stitching paragraphs with references to the essay's own structure.
+Neither trips any of the gate's rules. Every word in them is ordinary. The fault is **discourse signposting**: announcing the shape of the text rather than carrying content, telegraphing that something notable is coming, explaining the writer's own organizational choices, and stitching paragraphs with references to the essay's own structure.
 
 It has a name in applied linguistics. Hyland splits metadiscourse into *interactional* (hedges, boosters, attitude markers, self-mention: the writer's stance) and *interactive* (transitions, **frame markers**, **endophoric markers**: guiding the reader through the text's own structure). Frame markers are defined as devices that announce discourse goals, label stages, sequence material and shift topic. Both named sentences are frame markers.
 
