@@ -82,7 +82,7 @@ console.log('  ok clean');
 
 ## The exemptions in this skill's own files
 
-The gate has no escape syntax, so a file that must print a banned thing is logged here rather than edited. Every one of these is the lexicon or the pattern being named, and none of them is the fault being committed. The list is written from the gate's own output, run on all eight files, and not from memory.
+The gate has no escape syntax, so a file that must print a banned thing is logged here rather than edited. Every one of these is the lexicon or the pattern being named, and none of them is the fault being committed. The list is written from the gate's own output, run on all nine files, and not from memory.
 
 * `lint-gate.md` prints all 23 lexicon words twice, once in rule 3 and once in the reference implementation, and prints the em dash character twice for the same reason. Those two characters are also its only finding under rule 6.
 * `head-writer.md` prints the lexicon once, in the hygiene rules the writer gets.
