@@ -10,6 +10,8 @@
 
 **How it was made, 2026-09-13.** Written by DeepSeek V4 Pro (`deepseek/deepseek-v4-pro`) in one stateful conversation, three calls, sequential, under a brief carrying the doctrine's mechanical constraints and an explicit order to invent every subject and reproduce nothing. Never a Claude model, for the reason the whole shop exists. The subjects were chosen to be unlike each other on purpose: a night-time outage, an unpaid maintainer, and a trade with no software in it at all, that last one because the seat's voice is a person visibly not the expert in the room.
 
+**One doctrine rule this file does not carry, counted rather than guessed.** The doctrine says to leave the self-repairs in, because a spoken question ends the moment it is askable and real ones stumble. Across all 136 questions here there are zero: no restarts, no "I mean", no trailing off. Every question is grammatically clean, which no transcript of a person talking ever is. A seat reading this file will therefore write questions that are tidier than speech, and the tidiness is the file's fault and not the doctrine's. If that starts showing in the probes, the rule to lean on is the written one.
+
 **Measured, not asserted.** 136 questions. Every one under sixty-six characters. Median length 25 characters in the outage interview, 24 in the compiler interview, 27 in the clock interview. The longest question in the file runs 46 characters. The doctrine's own number, taken from the real corpus while it was reachable, was a median under sixty-six.
 
 ---
