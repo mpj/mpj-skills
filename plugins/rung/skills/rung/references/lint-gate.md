@@ -8,10 +8,12 @@ An agent runs these with whatever it has: a grep, a scripting runtime, its own r
 2. **Reversal frames.** Patterns, case-insensitive: `\bnot (?:just |only |merely )?[^.;:]{1,50}?, (?:but|it'?s|they'?re)\b`, `\bisn'?t (?:just|only|merely)\b`, `\baren'?t (?:just|only|merely)\b`, `\bit'?s not about\b`. The frame in any costume is banned, including ones the patterns miss (parentheses between the halves, a double negative); the editor reads for those.
 3. **The lexicon**, each matched as a word prefix, case-insensitive: delve, robust, seamless, pivotal, crucial, tapestry, landscape, testament, underscore, leverage, journey, load-bearing (either spelling), elegant, delightful, vibrant, boast, foster, realm, multifaceted, holistic, synergy, paradigm, nuance.
 4. **Probable rule-of-three endings.** Pattern: `\b\w+(?:ed|ing|s)?, \w+(?:ed|ing|s)?, and \w+(?:ed|ing|s)?[.!]`. A closer that lists three things loses one or gains a fourth.
-5. **The prose word count**, 120 to 220 words. The boundaries are mechanical: the count starts after the question line and stops at the TERMINOLOGY label, so the frame above and the three blocks below stay outside it, exactly as the skill says they do. **Part 0 is exempt**, because the pillar is shorter by design. A file with no position line is not a delivery, and the rule passes over it in silence. The position line is matched on its literal shape, `Part N of ?` with the question mark, because the denominator is unknown by design and a sentence in prose can open with the words alone; one did, in `provenance.md`, and an earlier pattern read it as a delivery. A file that has a position line and no TERMINOLOGY label is a delivery the gate cannot measure, and that is a finding of its own: a rule that skips quietly is a rule nobody can rely on. Why it is here: one draft in run 6 ran 304 words against the ceiling and passed the gate, and a later part's own count line said 190 where the relay counted 246. A self-reported count is not a check.
+5. **The prose word count**, 120 to 220 words. The boundaries are mechanical: the count starts after the question line and stops at the TERMINOLOGY label, so the frame above and the three blocks below stay outside it, exactly as the skill says they do. **Part 0 is exempt**, because the pillar is shorter by design. A file with no position line is not a delivery, and the rule passes over it in silence. The position line is matched on its literal shape, `Part N of ?` with the question mark, because the denominator is unknown by design and a sentence in prose can open with the words alone; one did, in `provenance.md`, and an earlier pattern read it as a delivery. Every part in the file is measured, not only the first, because a kept document is parts concatenated and the whole of it goes through the gate once at the end. A file that has a position line and no TERMINOLOGY label is a delivery the gate cannot measure, and that is a finding of its own: a rule that skips quietly is a rule nobody can rely on. Why it is here: one draft in run 6 ran 304 words against the ceiling and passed the gate, and a later part's own count line said 190 where the relay counted 246. A self-reported count is not a check.
 6. **Characters outside plain ASCII.** Each one is reported with its code point, its count, and the ASCII character it resembles where there is one. The code point is the point of the rule, because the characters that cause the damage are the ones nobody can see. Run 7's writer emitted U+2011, a non-breaking hyphen, inside hyphenated words in nearly every delivery; it reads as a hyphen on screen, walks straight through rule 1, and is hostile to every tool downstream. Typographic quotation marks arrive the same way. A letter that a real name needs is not a fault, and it is exempted like anything else, on the record.
 
-The reference implementation, fifty-nine lines, exit 0 clean and exit 1 with findings printed:
+**The code block below is the gate.** Any copy of this script living outside this file predates 2026-09-13 and runs four rules while reporting a pass, so extract the block rather than reaching for a copy you already have on disk.
+
+The reference implementation, sixty-two lines, exit 0 clean and exit 1 with findings printed:
 
 ```js
 #!/usr/bin/env node
@@ -40,18 +42,21 @@ if (triads) for (const t of triads) findings.push(`possible triad ending: "${t}"
 // 5. prose word count: after the question line, up to the TERMINOLOGY label. Part 0 exempt.
 const POS = /^\**Part (\d+) of \?/, TERM = /^\**TERMINOLOGY\b/;
 const lines = text.split('\n');
-const pos = lines.findIndex(l => POS.test(l.trim()));
-if (pos >= 0) {
+const starts = [];
+lines.forEach((l, i) => { if (POS.test(l.trim())) starts.push(i); });
+for (let k = 0; k < starts.length; k++) {          // every part in the file, not only the first
+  const pos = starts[k], limit = k + 1 < starts.length ? starts[k + 1] : lines.length;
   const part = Number(lines[pos].trim().match(POS)[1]);
-  const end = lines.findIndex((l, i) => i > pos && TERM.test(l.trim()));
+  let end = -1;
+  for (let i = pos + 1; i < limit; i++) if (TERM.test(lines[i].trim())) { end = i; break; }
   if (end < 0) {
-    findings.push('prose word count: position line present and no TERMINOLOGY label, so the prose has no end; not measured');
+    findings.push(`prose word count (Part ${part}): no TERMINOLOGY label before the next part or the end of the file; not measured`);
   } else if (part > 0) {
     let s = pos + 1;
     while (s < end && lines[s].trim() === '') s++;  // blank lines under the position line
     s++;                                            // the question line itself
     const n = lines.slice(s, end).join(' ').split(/\s+/).filter(Boolean).length;
-    if (n < 120 || n > 220) findings.push(`prose word count: ${n} words (the range is 120 to 220)`);
+    if (n < 120 || n > 220) findings.push(`prose word count (Part ${part}): ${n} words (the range is 120 to 220)`);
   }
 }
 
