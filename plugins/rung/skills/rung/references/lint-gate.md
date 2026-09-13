@@ -37,3 +37,15 @@ if (triads) for (const t of triads) findings.push(`possible triad ending: "${t}"
 if (findings.length) { console.log(findings.map(f => `  ✗ ${f}`).join('\n')); process.exit(1); }
 console.log('  ✓ clean');
 ```
+
+## The exemptions in this skill's own files
+
+The gate has no escape syntax, so a file that must print a banned thing is logged here rather than edited. Every one of these is the lexicon or the pattern being named, and none of them is the fault being committed.
+
+* `lint-gate.md` prints all 23 lexicon words twice, once in rule 3 and once in the reference implementation, and prints the em dash character twice for the same reason.
+* `head-writer.md` prints the lexicon once, in the hygiene rules the writer gets.
+* `SKILL.md` and `protocol.md` name the reversal frame by quoting it, "not X, but Y", and `protocol.md` also quotes "isn't just".
+* `research.md` quotes "not X, it's Y" as the pattern the first round of pastiches carried, and `research.md` and `provenance.md` both quote "load-bearing" as a word the reader named in a verdict.
+* `SKILL.md` and `advisors.md` gloss the Swedish *sirligt* as "ornate, over-elegant", which is the reader's own verdict and the reason the tightening seat exists.
+
+Everything else in this skill passes. The bullets are `*` rather than `-` on purpose: a markdown hyphen bullet at the start of a line is a spaced hyphen to rule 1, and the gate is right to count it, because the file it is reading might be prose.

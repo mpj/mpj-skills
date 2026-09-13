@@ -34,37 +34,39 @@ against the API rather than transcribed from its documentation.
 /plugin install noun@mpj
 ```
 
-## writing-shop
+## rung
 
-An editorial shop for prose an agent writes to a person, and the delivery form
-that goes with it.
+One skill, **`rung`**, for holding a discussion with one person that leaves them
+understanding something. An interviewer seat probes before anything is
+explained, in a texture anchored on Brian Lamb's questions; a dense expert
+statement stands as the pillar, the unit test of whether they already knew it;
+every later part is written on demand from their own words, one rung down the
+ladder of abstraction, with a detour whenever a misconception shows. Nothing is
+written ahead of the reader. A position line and a ground line above each part,
+so someone landing from another tab knows where they stand, and a labelled block
+below it: terminology, summary, continue or ask.
 
-**`writing-shop`** writes a piece in one settled voice and edits it by letter.
-The head writer continues verbatim passages of a real author rather than
-imitating a description of one; a structure advisor rules on the one point,
-the lead and the exit before the draft; a precision editor and a tightening
-advisor work the line after it; every concrete is then held against the world
-by an agent with tools, and a four-rule mechanical gate runs last. The seats
-were filled by audition and each has lost an argument to the writer on the
-merits. Model-agnostic, and the seats should sit on different families: the
-provenance records what happened when they did not.
+The prose comes from a shop of seats that argue by letter. The head writer
+continues verbatim passages of a real author rather than imitating a description
+of one; a structure advisor rules on the map, the pillar and the exit; a
+precision editor and a tightening advisor work the line; every concrete is held
+against the world by an agent with tools, and a four-rule mechanical gate runs
+last. The seats were filled by audition and each has lost an argument to the
+writer on the merits. The heavy seats run when the text will be kept rather than
+on every turn, because a full pass costs minutes. Model-agnostic in form, and
+the seats should sit on different families: the provenance records what happened
+when they did not.
 
-**`serial`** explains a thing to one person one part at a time, shaped by what
-they already know. An interviewer seat probes first, in a texture anchored on
-Brian Lamb's questions; a dense expert statement, serial 0, stands as the
-pillar; every later part is written on demand from the reader's own words, one
-rung down, with a detour when a misconception shows. A masthead above every
-part for the reader landing from another tab, and a labelled block below it,
-terminology, summary, continue or ask. It exists because an agent deep in a
-context assumes its reader is in it too, and delivers in blocks too large to
-stop and ask about.
+The same voice writes a document when one is wanted, a pull request body or a
+retrospective, at the fuller setting. It builds no files and no pages of its
+own.
 
 ## Install
 
 ```
 /plugin marketplace add mpj/mpj-skills
 /plugin install sweeps@mpj
-/plugin install writing-shop@mpj
+/plugin install rung@mpj
 ```
 
 Or copy the skill directories under `plugins/*/skills/` into `~/.claude/skills/`.
@@ -72,6 +74,6 @@ Or copy the skill directories under `plugins/*/skills/` into `~/.claude/skills/`
 Each `SKILL.md` is a plain [Agent Skill](https://github.com/anthropics/skills) —
 prose, no scripts, no dependencies — so it works in any agent that reads the
 format, and it names no repository, language or toolchain of its own. The
-writing shop carries its charters and its record as `references/`, prose too;
+`rung` skill carries its charters and its record as `references/`, prose too;
 its one mechanical gate is four patterns written out, with a reference
 implementation an agent may run or re-express.

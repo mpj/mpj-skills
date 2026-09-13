@@ -47,10 +47,10 @@
       "license": "MIT"
     },
     {
-      "name": "writing-shop",
-      "source": "./plugins/writing-shop",
-      "description": "An editorial shop for prose an agent writes to a person: an anchored head-writer voice, advisors who argue by letter, a fact check against the world, a mechanical gate; and serial, the part-by-part delivery that lets the reader stop and ask.",
-      "version": "0.1.0",
+      "name": "rung",
+      "source": "./plugins/rung",
+      "description": "A structured discussion that leaves one person understanding something: an interviewer probes first, a dense expert statement stands as the pillar, and every later part is written on demand one rung down, in an anchored voice edited by seats that argue by letter and checked against the world.",
+      "version": "0.2.0",
       "author": {
         "name": "Mattias Petter Johansson",
         "url": "https://github.com/mpj"
@@ -59,10 +59,11 @@
       "repository": "https://github.com/mpj/mpj-skills",
       "category": "writing",
       "tags": [
-        "writing",
+        "explanation",
+        "teaching",
+        "conversation",
         "voice",
         "editing",
-        "explanation",
         "fact-checking"
       ],
       "license": "MIT"
