@@ -36,7 +36,7 @@ The map is revisable after the interview. A node the reader already holds is pru
 9. The **root-conformance gate** runs inside the veridicality check, on the pillar, every time: every term an exact map node, every relation stated or deliberately omitted without changing scope, no new commitment in the TERMINOLOGY block, a disposition per clause. A failure blocks delivery and takes one constrained rewrite.
 10. Each later **part** is written after the reader replies: one rung down, aimed at the deepest node the ledger shows ungrounded, built from what he holds. Then the lint gate, then delivery.
 
-The relay counts the prose words before delivery, between the ground line and the TERMINOLOGY label. The writer's own count is not a check: in the validation run it reported 190 where the relay counted 246.
+The relay counts the prose words before delivery, between the question line and the TERMINOLOGY label. The writer's own count is not a check: in the validation run it reported 190 where the relay counted 246.
 
 ## When it will be kept
 

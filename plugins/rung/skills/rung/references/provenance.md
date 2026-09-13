@@ -109,3 +109,13 @@ He was right about the message. Of roughly four hundred words, four short questi
 **What went in the skill.** A section headed "Whose words reach the reader": what a seat writes is delivered as it came back, the agent may fill in and report and answer, and the boundary between the two is marked on the page with the seat named. The test is the reader's own question, "did you write that or did the shop", and a run that cannot answer it plainly has failed.
 
 **Principle added.** The output of the machinery is the prose, so an agent that paraphrases a seat has run the whole shop and thrown away the product. Unmarked, the agent's own register is the only one the reader meets, and the reader's trust in every quoted line goes with it.
+
+## The ground line becomes a question line (2026-09-13)
+
+The same session that produced the delivery ruling produced this one, two parts later. The reader read a part headed "So far: writ, the nudge machine, commitment, sharp time, arming, exit call, stickiness, writ-loop" and said: "i'm not so much a fan of the new 'so far' thing. it doesn't really help us. i know what we've talked about. what we need here is a clause that captures what the part is for: perhaps the question or possibly the question pair that the part is trying to answer in as clear a way as possible. it's okay if the question is confusing when you start reading the part but it should be clear by the time i reach the end of the part (given that i understand all the terminology and don't have to ask about it)."
+
+The ground line was written for a reader arriving cold from another tab, and the only reader a session actually has is the one who has been in it. To him the line recited his own conversation back at him. Worse, it grew: by Part 2 it carried nine nouns and read as a bar of furniture, which is the failure the masthead ruling had already caught once in the same week.
+
+**What replaced it.** From Part 1 on, the second thin line states the question the part answers, or the pair it answers. The pillar keeps the position line alone, because the question it answers is the session's. The reader's own test travelled with the ruling: the line may be opaque before the part and must be visibly answered after it, for a reader who holds the terminology. That gives the line a property nothing else in the frame has, which is that it can fail. A summary cannot be checked against the text that follows it; a question can.
+
+**Principles added.** The frame is for the reader who is here, and he was here for everything before this part. A line that cannot be wrong is furniture. Where a part cannot be put as one question or a pair, it is carrying more than one part's work and it should be split.
