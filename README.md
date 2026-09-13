@@ -37,20 +37,23 @@ against the API rather than transcribed from its documentation.
 ## rung
 
 One skill, **`rung`**, for holding a discussion with one person that leaves them
-understanding something. An interviewer seat probes before anything is
-explained, in a texture anchored on Brian Lamb's questions; a dense expert
+understanding something. A session opens on a title, a one-line standfirst and a
+welcome, so nobody starts reading page one of a book with no cover. Then an
+interviewer seat probes before anything is explained, working from Brian Lamb's
+doctrine and from his questions where they can still be fetched; a dense expert
 statement stands as the pillar, the unit test of whether they already knew it;
 every later part is written on demand from their own words, one rung down the
 ladder of abstraction, with a detour whenever a misconception shows. Nothing is
-written ahead of the reader. A position line and a ground line above each part,
-so someone landing from another tab knows where they stand, and a labelled block
-below it: terminology, summary, continue or ask.
+written ahead of the reader. A position line and a question line above each
+part, so someone landing from another tab knows where they stand and what the
+part is for, and a labelled block below it: terminology, summary, and the three
+moves (I understand, ask, or go on).
 
 The prose comes from a shop of seats that argue by letter. The head writer
 continues verbatim passages of a real author rather than imitating a description
 of one; a structure advisor rules on the map, the pillar and the exit; a
 precision editor and a tightening advisor work the line; every concrete is held
-against the world by an agent with tools, and a four-rule mechanical gate runs
+against the world by an agent with tools, and a six-rule mechanical gate runs
 last. The seats were filled by audition and each has lost an argument to the
 writer on the merits. The heavy seats run when the text will be kept rather than
 on every turn, because a full pass costs minutes. Model-agnostic in form, and
@@ -75,5 +78,5 @@ Each `SKILL.md` is a plain [Agent Skill](https://github.com/anthropics/skills) â
 prose, no scripts, no dependencies â€” so it works in any agent that reads the
 format, and it names no repository, language or toolchain of its own. The
 `rung` skill carries its charters and its record as `references/`, prose too;
-its one mechanical gate is four patterns written out, with a reference
+its one mechanical gate is six patterns written out, with a reference
 implementation an agent may run or re-express.
