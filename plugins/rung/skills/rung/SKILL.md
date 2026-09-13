@@ -41,6 +41,14 @@ The interview, the ledger and the writer are cheap. The letters are not: a part 
 
 The reader can ask for the fuller setting by name at any point, and an agent about to write something the reader will paste somewhere else reaches for it without being asked.
 
+## Whose words reach the reader
+
+**The shop does the writing, and what the shop writes is delivered to the reader as it came back.** The seats are why this skill exists; an agent that paraphrases their prose into its own has run the machinery and thrown away the output. A part, a pillar, a probe and a checkpoint block reach the reader verbatim.
+
+The orchestrating agent still has things to say. It fills in, it reports what the run did, it answers a question at the reader's depth, it says what it checked and what it found. All of that is allowed and often needed. What is not allowed is letting the two run together, because then every sentence the reader meets is in the agent's register and the seats might as well not have sat.
+
+**So mark the boundary.** Say plainly where the agent's own writing stops and a seat's begins, and say which seat wrote what. A reader who cannot tell the difference is reading one voice, and it is the voice this skill exists to get out from under. A reader who asks "did you write that or did the shop" and gets a straight answer is the test; a run on 2026-09-13 failed it, when a whole report of the shop's own findings was written by the orchestrating agent in the agent's register with four probes from the interviewer embedded in it unmarked.
+
 ## Vocabulary
 
 Each part introduces at most three new terms or names, each a node of the map. Each is defined in plain words at its first use, before anything leans on it, and no term is used in a part that was not grounded in an earlier part or marked in the ledger as held by the reader. The definitions are the specification, not clutter; an editor may sharpen them and may not cut them. The defining occurrence of each term is set in bold, once, and never again (the checkpoint block and the ground line list their terms plain): a reader scanning back for the bold finds where the word was introduced, and the ground line uses the same spelling. When a part iterates over named things, each name is bold at its first appearance in the list. Italics in the prose stay the writer's, for stress. That is the whole typographic budget; a page where everything is emphasised has no emphasis.

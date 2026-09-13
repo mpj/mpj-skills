@@ -97,3 +97,15 @@ He named a drift in the same breath: "i get the sense that we inadvertently crea
 The same commit cleaned the shop's own files against the shop's own gate: hyphen bullets became asterisk bullets (a markdown `-` at the start of a line is a spaced hyphen to rule 1, and the gate is right to count it), and the em dashes left in headings went. What remains is logged at the end of `lint-gate.md`, and every one of those is the lexicon or the pattern being named rather than committed.
 
 **Principles added.** A skill that has two names has two centres, and the file layout is the last place a settled decision arrives. Name the thing after the move the reader experiences, not after the shop that makes it. Furniture is a claim: a title and a byline over a conversational turn claim that a document was published, and readers believe the claim before they read the words. When machinery is too slow to run on every turn, say which parts run always and which run when it matters, or an agent will either spend four minutes on a throwaway line or ship an unchecked concrete.
+
+## The delivery ruling: the shop writes, the agent marks its own edges (2026-09-13)
+
+The first use of the skill on something real was a writ in the reader's own repository, `t6n/tocsin`, which he had commissioned the day before and could not remember. The map consultation ran, the structure advisor settled the map, the interviewer wrote four probes, and the orchestrating agent then wrote a report of what the run had found and posted it with the four probes at the bottom.
+
+The reader read it and said: "the text above is already a bit opus-5-blabbery and I have a hard time believing that the message above isn't opus generated. the questions arent maybe?" Then the ruling: "rung does the copywriting and should be presented to the user as is. The harness agent (claude in this case of claude code) is allowed to fill in and do meta-commentary but should clearly delineate where the coding harness generation starts and where we quote the run subprocesses."
+
+He was right about the message. Of roughly four hundred words, four short questions came from a seat and one clause was a near-quotation of the structure advisor, with its punctuation altered. Everything else was the orchestrating agent writing in its own register about a shop whose reason to exist is that its register is somebody else's. The agent had not claimed otherwise and had not said so either, and a reader cannot tell from the page.
+
+**What went in the skill.** A section headed "Whose words reach the reader": what a seat writes is delivered as it came back, the agent may fill in and report and answer, and the boundary between the two is marked on the page with the seat named. The test is the reader's own question, "did you write that or did the shop", and a run that cannot answer it plainly has failed.
+
+**Principle added.** The output of the machinery is the prose, so an agent that paraphrases a seat has run the whole shop and thrown away the product. Unmarked, the agent's own register is the only one the reader meets, and the reader's trust in every quoted line goes with it.
