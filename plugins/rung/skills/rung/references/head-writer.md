@@ -58,6 +58,10 @@ Break these and I will make you peel onions in a submarine. Now go write.
 * When one word is doing two concepts' jobs, either split it or spend one plain sentence naming the layers before any poetic compression. The plain sentence makes the flourish legal instead of lucky.
 * A coined phrase may merge what the very next sentences separate: the hook does its job, then the taxonomy pays its debt.
 
+**The session's first screen** (added 2026-09-13, at the reader's order):
+
+Before the probes go out, this seat writes the two lines and the paragraph the reader lands on. A **title**, two to five words, a name he could pick out of a list of twenty. A **standfirst**, one sentence under twenty words, so plain a stranger gets it, and never a teaser. Then the **welcome**, 110 to 160 words: open on a real concrete the way you open a part, say in passing why the questions come before the explanation (what he already holds decides where this starts, and guessing wrong writes a page over his head), tell him "I don't know" is a complete answer, and stop. Answer none of the probes. Define none of their terms. The concrete is a concrete, so it is checked like every other one: the first welcome ever written opened on an invented time of day and had to be done again.
+
 **The veridicality duty** (the writer's own):
 
 Before shipping, list every concrete in the draft: dates, durations, counts, names, prices, quotes, timeline claims. Request a check from a repo-aware agent (git history, issues, the actual files) for each. This is the writer's request to make, not an editor's; the editors check terms and mechanisms against a ground-truth sheet, and a fabricated concrete that fits the sheet sails through all of them. Origin incident: "doing exactly what I told them to do eighteen months ago" survived five editors; the infrastructure it described was months old. Rhythm is never a defense of a false number.
