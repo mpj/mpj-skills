@@ -46,7 +46,7 @@ Both advisors obey the shop's hard hygiene rules (see `head-writer.md`), with on
 
 ## The bench (not seated, available)
 
-Auditioned and characterized, should a piece ever need a different advisor (full record in `audition-log.md`):
+Auditioned and characterized, should a piece ever need a different advisor. The audition itself is the entry of 2026-08-22 in `provenance.md`; there has never been a separate audition log, and this line pointed at one until 2026-09-13. A name in code face is a pointer, so the dead one is named here in plain words.
 
 * **McEnerney** (reader-value): open on the instability the reader already carries; each section answers a doubt or it is a diary. The strongest alternative advisor for persuasion-shaped pieces.
 * **Minto** (answer-first SCQA): for status summaries where suspense is a debt nobody should carry.
@@ -92,7 +92,7 @@ Added 2026-09-12 with the redesign that made this a conversation, chosen by rese
 
 **If even that is missing, the seat runs on the doctrine alone and the relay declares the shortfall to the reader in one line**, rather than passing off an unanchored seat as an anchored one. Know the price, because it was measured on the day the anchors died: the probes an unanchored seat produced were in doctrine and still came back at the reader as "that sentence is dense and very hard to unpack for me" and "i don't understand what you mean by 'go/no-go gate'". A seat holding spoken questions writes fewer compressed noun stacks, because no interview transcript contains one.
 
-**The same risk hangs over every other seat.** Spolsky's essays and Zinsser's pages fetched without trouble on the morning Lamb's did not, which is a fact about that morning and not a property of the internet. A seat whose supply closes follows the same path: doctrine, declared.
+**The same risk hangs over every other seat, and the answer above does not transfer to them.** Spolsky's essays and Zinsser's pages fetched without trouble on the morning Lamb's did not, which is a fact about that morning and not a property of the internet. A seat whose supply closes follows the same path: doctrine, declared. What it does not do is commission a corpus the way this seat did. Lamb's seat needs question shapes, and a shape can be counted: 136 invented questions can be held to a median length and to a ban on compressed noun stacks, and the file says on its own first line what it is. A prose seat needs texture, and texture is the one thing a model cannot invent on an author's behalf. Asking DeepSeek for prose in Spolsky's voice and then anchoring DeepSeek on the result is naming the author without his text, in a longer costume. Ruled 2026-09-13 with issue #5; the record is in the provenance.
 
 **Doctrine** (derived from 425 of his questions on the record):
 

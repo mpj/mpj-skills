@@ -1,0 +1,9 @@
+{
+  "name": "mpj-skills",
+  "private": true,
+  "type": "module",
+  "description": "Tests for the prose that ships in this marketplace. Nothing here is published with a plugin.",
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  }
+}

@@ -82,14 +82,46 @@ console.log('  ok clean');
 
 ## The exemptions in this skill's own files
 
-The gate has no escape syntax, so a file that must print a banned thing is logged here rather than edited. Every one of these is the lexicon or the pattern being named, and none of them is the fault being committed. The list is written from the gate's own output, run on all nine files, and not from memory.
+The gate has no escape syntax, so a file that must print a banned thing is logged here rather than edited. Every one of these is the lexicon or a pattern being named, and none of them is the fault being committed.
 
-* `lint-gate.md` prints all 23 lexicon words twice, once in rule 3 and once in the reference implementation, and prints the em dash character twice for the same reason. Those two characters are also its only finding under rule 6.
+**The list is the gate's own output and not a description of it.** A test in this repository regenerates the block below and fails when the two disagree, so a new fault cannot hide behind a stale exemption and a fixed one cannot stand as a claim nobody rechecked. It was prose until 2026-09-13, and the prose had already drifted: it gave `research.md` one reversal frame where the gate finds two, and it undercounted this file by three frames and two words. Counts live in the block. The bullets underneath say only why each exemption is allowed to stand.
+
+**This file is missing from its own list, and that is not an oversight.** Every finding in the block is a literal string, so a block listing this file's findings would add to them the moment it was written, and the count would never settle. Worse, the block quotes what the gate found in every other file, so this file now carries a copy of the Spanish letter in `advisors.md` and of the arrow in `model-selection.md` as well. The one place an expected list for this file can live is the test, which is the single exception to the rule that a document owns its own facts, and it exists because self-reference leaves nowhere else to put it. The test's list is frozen and any new finding here fails it, which is the property that matters.
+
+```text
+SKILL.md  reversal frame: "not X, but"
+SKILL.md  slop word: elegant (1x)
+references/advisors.md  slop word: elegant (1x)
+references/advisors.md  non-ASCII U+00F3 "ó" (1x)
+references/head-writer.md  slop word: delve (1x)
+references/head-writer.md  slop word: robust (1x)
+references/head-writer.md  slop word: seamless (1x)
+references/head-writer.md  slop word: pivotal (1x)
+references/head-writer.md  slop word: crucial (1x)
+references/head-writer.md  slop word: tapestry (1x)
+references/head-writer.md  slop word: landscape (1x)
+references/head-writer.md  slop word: testament (1x)
+references/head-writer.md  slop word: underscore (1x)
+references/head-writer.md  slop word: leverage (1x)
+references/head-writer.md  slop word: journey (1x)
+references/head-writer.md  slop word: load-bearing (1x)
+references/head-writer.md  slop word: elegant (1x)
+references/head-writer.md  slop word: delightful (1x)
+references/model-selection.md  non-ASCII U+2192 "→" (6x)
+references/protocol.md  reversal frame: "not X, but"
+references/protocol.md  reversal frame: "isn't just"
+references/provenance.md  slop word: load-bearing (1x)
+references/research.md  reversal frame: "not X, it's"
+references/research.md  reversal frame: "not X, but"
+references/research.md  slop word: load-bearing (1x)
+```
+
+* `lint-gate.md` prints the whole lexicon twice, in rule 3 and again in the reference implementation, and prints the em dash character and the reversal frames for the same reason.
 * `head-writer.md` prints the lexicon once, in the hygiene rules the writer gets.
-* `SKILL.md` and `protocol.md` name the reversal frame by quoting it, "not X, but Y", and `protocol.md` also quotes "isn't just".
-* `research.md` quotes "not X, it's Y" as the pattern the first round of pastiches carried, and `research.md` and `provenance.md` both quote "load-bearing" as a word the reader named in a verdict.
+* `SKILL.md` and `protocol.md` name the reversal frame by quoting it, and `protocol.md` also quotes "isn't just".
+* `research.md` quotes both shapes of the frame as the patterns the first round of pastiches carried, and `research.md` and `provenance.md` both quote "load-bearing" as a word the reader named in a verdict.
 * `SKILL.md` and `advisors.md` gloss the Swedish *sirligt* as "ornate, over-elegant", which is the reader's own verdict and the reason the tightening seat exists.
-* Under rule 6: `advisors.md` carries U+00F3 once, inside a proper name on its bench of candidates, and `model-selection.md` carries U+2192 six times, as the arrow in its seating tables. Both are deliberate and neither resembles an ASCII character.
+* Under rule 6: `advisors.md` carries U+00F3 inside a proper name on its bench of candidates, and `model-selection.md` carries U+2192 as the arrow in its seating tables. Both are deliberate and neither resembles an ASCII character.
 
 Every other file is clean of non-ASCII entirely, which is the state rule 6 exists to keep.
 

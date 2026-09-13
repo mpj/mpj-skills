@@ -1,0 +1,5 @@
+# Anchor passages are a living author's published prose, fetched once per
+# machine by the seat that needs them (see the seat setup in
+# plugins/rung/skills/rung/references/protocol.md) and never committed.
+# This repository does not redistribute them.
+*.local.md
