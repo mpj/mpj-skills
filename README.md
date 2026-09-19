@@ -79,6 +79,14 @@ own.
 
 Or copy the skill directories under `plugins/*/skills/` into `~/.claude/skills/`.
 
+OpenCode also discovers skills in `~/.claude/skills/`. A copied installation is
+a snapshot: pushing changes here does not update it. Refresh the complete skill
+directory, including `references/`, while preserving any `*.local.md` anchor
+files, then quit and restart OpenCode. Start a fresh rung session to avoid
+continuing with the old seat prompts. When installing from a feature branch,
+record its commit; the normal marketplace source does not include those changes
+until they reach its default branch.
+
 Each `SKILL.md` is a plain [Agent Skill](https://github.com/anthropics/skills) —
 prose, no scripts, no dependencies — so it works in any agent that reads the
 format, and it names no repository, language or toolchain of its own. The

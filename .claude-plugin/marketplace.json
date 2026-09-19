@@ -49,8 +49,8 @@
     {
       "name": "rung",
       "source": "./plugins/rung",
-      "description": "A structured discussion that leaves one person understanding something: an interviewer probes first, a dense expert statement stands as the pillar, and every later part is written on demand one rung down, in an anchored voice edited by seats that argue by letter and checked against the world.",
-      "version": "0.2.0",
+      "description": "A structured discussion that leaves one person understanding something: an interview and expert pillar, followed by reader-led parts and short clarifications in an anchored, checked voice. After Part 0, one provisional next part can be prepared while the reader reads, then reconciled with their actual reply.",
+      "version": "0.5.0",
       "author": {
         "name": "Mattias Petter Johansson",
         "url": "https://github.com/mpj"
