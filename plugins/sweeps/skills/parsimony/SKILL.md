@@ -1,6 +1,7 @@
 ---
 name: parsimony
-description: Propose removals — things that still work but no longer earn what everyone must carry: a compatibility shim, a second mechanism for one job, an option nobody sets, a convention, a rule. Use when asked to simplify, spring-clean, cut back, sacrifice backwards compatibility for cohesion, or ask what a codebase would be better without. Proposals are deliberately aggressive and meant to be refused more often than accepted. Proposes only; changes nothing. Sibling of `truing`.
+description: >-
+  Propose removals — things that still work but no longer earn what everyone must carry: a compatibility shim, a second mechanism for one job, an option nobody sets, a convention, a rule. Use when asked to simplify, spring-clean, cut back, sacrifice backwards compatibility for cohesion, or ask what a codebase would be better without. Proposals are deliberately aggressive and meant to be refused more often than accepted. Proposes only; changes nothing. Sibling of `truing`.
 ---
 
 # parsimony
