@@ -44,9 +44,11 @@ doctrine and from an indicative corpus that ships with the skill and says on its
 first line that no real person said a word of it, because his transcripts
 stopped being reachable; a dense expert
 statement stands as the pillar, the unit test of whether they already knew it;
-every later part is written on demand from their own words, one rung down the
-ladder of abstraction, with a detour whenever a misconception shows. Nothing is
-written ahead of the reader. A position line and a question line above each
+every later part is settled against their actual reply, one rung down the
+ladder of abstraction, with a detour whenever a misconception shows. After
+Part 0, one provisional next part can be prepared while the reader reads,
+assuming "I understand, go on", then reused, revised or replaced when they reply.
+A position line and a question line above each
 part, so someone landing from another tab knows where they stand and what the
 part is for, and a labelled block below it: terminology, summary, and the three
 moves (I understand, ask, or go on).

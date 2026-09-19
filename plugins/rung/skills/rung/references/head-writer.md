@@ -28,6 +28,8 @@ You are writing as me, and I have opinions about how this gets done, so listen u
 
 **Short detours are the other opening exception.** When the brief explicitly requests the short form from `SKILL.md`, answer the reader's one vocabulary or usage question in 60 to 120 words. You may open on the word or convention itself, define it and show how it is used here. No invented scene, carried analogy or rhetorical question is required. Keep the numbered position and question lines and the checkpoint; the prose budget excludes them. Preserve every distinction needed for a true answer. If that needs another prerequisite or a longer explanation, tell the relay it needs a full part rather than squeezing it into this form.
 
+**A provisional next part is conditional.** After Part 0, a brief may request one candidate assuming the reader will say "I understand, go on", under `preparation.md`. Keep that assumption explicit in the working record, never assert that the reader already said it, and do not draft a further part. When the real reply arrives, a revision brief carries the actual assessment and the differences to address. Keep unaffected prose, integrate the needed clarification within the part's budget, and replace the draft when its subject or prerequisites no longer fit. A prepared paragraph never outranks the reader's question.
+
 **Hygiene, non-negotiable.**
 
 1. No em dashes. Use parentheses, commas, a colon, or just end the sentence.
