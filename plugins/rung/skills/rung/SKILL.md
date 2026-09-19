@@ -35,7 +35,7 @@ The second is the register. A model told to write like an author writes an essay
 
 The interview, the ledger and the writer are cheap. The letters are not: a part that goes through the whole shop costs several model calls and several minutes between the reader's "continue" and the next screen of text. So the machinery runs at two settings, and an agent picks by asking one question. **Is this read once in the conversation, or kept?**
 
-**Every turn, always.** The map consultation and the masthead and welcome (each once per session), the interview, the ledger, the writer in the anchored voice, and the lint gate. A bare "go on" is recorded as no new evidence without an assessor call; answers with substance still go to the assessor. The pillar additionally takes the root-conformance gate inside the veridicality check, every time, because it is the one delivery with no rung above it to correct it.
+**Every turn, always.** The map consultation and the masthead and welcome (each once per session), the interview, the ledger, the writer in the anchored voice, and the lint gate. A bare "go on" is recorded as no new evidence without an assessor call unless earlier evidence is awaiting assessment. Answers with substance still go to the assessor; a short detour may answer an explicit question first, under the bounded deferral in `references/protocol.md`. The pillar additionally takes the root-conformance gate inside the veridicality check, every time, because it is the one delivery with no rung above it to correct it.
 
 **When it will be kept.** The precision editor's letter and the writer's item-by-item reply; the tightening pass, on every second part (the fault it hunts accumulates). **When its facts matter, even in conversation.** The veridicality check against the world on every concrete. A part that carries dates, counts, names, quotes or attributions gets that check whatever else it gets; those facts alone do not trigger the editorial letters. The leak check runs on every delivery. The full protocol, letter by letter, is in `references/protocol.md`.
 
@@ -67,7 +67,7 @@ The exemption stops there. The pillar's terms are still the map's nodes under th
 
 Above every part, outside the prose and not counted as prose, two thin lines and no more:
 
-* A **position line**: "Part N of ?", with the pillar as Part 0, the denominator unknown until the session ends, and a detour marked as one ("Part 4 of ?, a detour") since detours take the next ordinal.
+* A **position line**: "Part N of ?", with the pillar as Part 0, the denominator unknown until the session ends, and a detour marked as one ("Part 4 of ?, a detour") since detours take the next ordinal. The short form below uses the exact suffix ", a short detour" so the word-count gate knows its range.
 * From Part 1 on, a **question line**: the question this part answers, or the pair of questions it answers, put as plainly as it can be put. The pillar takes the position line alone, since the question it answers is the session's.
 
 That is the whole frame for a conversation. The position line says where the reader stands and the question line says what this part is for.
@@ -124,7 +124,9 @@ The blocks are the reader's specification, like the position line: an editor may
 
 ## Parts
 
-120 to 220 words of prose each; the pillar is shorter and is exempt. The lines above and the checkpoint below are outside the prose and not counted. Part 1 and every later part open on a fact, a scene, a person or a number, as the writer's standing prompt says; the pillar alone opens on the statement itself. Assume the reader has read nothing: not the document you are explaining, not the earlier conversation, not the file you just wrote. They are arriving cold, holding a sandwich.
+120 to 220 words of prose each; the pillar is shorter and is exempt. The lines above and the checkpoint below are outside the prose and not counted. Part 1 and every later part open on a fact, a scene, a person or a number, as the writer's standing prompt says; a short detour may open directly on the word or convention the reader asked about, and the pillar opens on the statement itself. Assume the reader has read nothing: not the document you are explaining, not the earlier conversation, not the file you just wrote. They are arriving cold, holding a sandwich.
+
+**A short detour answers one explicit vocabulary or usage question in 60 to 120 words.** The reader names a word, phrase or convention of this discussion they want explained, and its meaning can be given from verified material without diagnosing their understanding or introducing another prerequisite. Define it, show its use here, and keep any distinction needed to make that use true. At most one new term, under the same map and definition rules. The writer still writes it, the interviewer still supplies its question, and the usual checkpoint and checks remain. The reader's own question selects this detour; pending assessment cannot select further teaching until the assessor has read it. `references/protocol.md` specifies that path. If the answer needs a mechanism, multiple concepts or a misconception corrected, use a full-length part. Shortness is permission to stop when the question is answered, never permission to compress a larger explanation into fewer words.
 
 ## The seats
 

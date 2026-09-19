@@ -11,9 +11,11 @@ An agent runs these with whatever it has: a grep, a scripting runtime, its own r
 5. **The prose word count**, 120 to 220 words. The boundaries are mechanical: the count starts after the question line and stops at the TERMINOLOGY label, so the frame above and the three blocks below stay outside it, exactly as the skill says they do. **Part 0 is exempt**, because the pillar is shorter by design. A file with no position line is not a delivery, and the rule passes over it in silence. The position line is matched on its literal shape, `Part N of ?` with the question mark, because the denominator is unknown by design and a sentence in prose can open with the words alone; one did, in `provenance.md`, and an earlier pattern read it as a delivery. Every part in the file is measured, not only the first, because a kept document is parts concatenated and the whole of it goes through the gate once at the end. A file that has a position line and no TERMINOLOGY label is a delivery the gate cannot measure, and that is a finding of its own: a rule that skips quietly is a rule nobody can rely on. Why it is here: one draft in run 6 ran 304 words against the ceiling and passed the gate, and a later part's own count line said 190 where the relay counted 246. A self-reported count is not a check.
 6. **Characters outside plain ASCII.** Each one is reported with its code point, its count, and the ASCII character it resembles where there is one. The code point is the point of the rule, because the characters that cause the damage are the ones nobody can see. Run 7's writer emitted U+2011, a non-breaking hyphen, inside hyphenated words in nearly every delivery; it reads as a hyphen on screen, walks straight through rule 1, and is hostile to every tool downstream. Typographic quotation marks arrive the same way. A letter that a real name needs is not a fault, and it is exempted like anything else, on the record.
 
-**The code block below is the gate.** Any copy of this script living outside this file predates 2026-09-13 and runs four rules while reporting a pass, so extract the block rather than reaching for a copy you already have on disk.
+**Rule 5's short-detour range is 60 to 120 words.** It applies only when the position line is exactly `Part N of ?, a short detour`, optionally wrapped in asterisks for emphasis. Ordinary parts and ordinary detours keep the 120 to 220 range. The boundaries, glossary requirement and Part 0 exemption stay the same. Eligibility for the short form is a semantic check under `SKILL.md`; the gate only enforces the declared range. A short marker never waives any other rule.
 
-The reference implementation, sixty-two lines, exit 0 clean and exit 1 with findings printed:
+**The code block below is the gate.** Extract it from the installed skill at session setup and keep it with that session's version. An older copy may lack the word-count rule or the short-detour range, so a familiar filename on disk is not evidence that it checks the current contract.
+
+The reference implementation, exit 0 clean and exit 1 with findings printed:
 
 ```js
 #!/usr/bin/env node
@@ -41,6 +43,7 @@ if (triads) for (const t of triads) findings.push(`possible triad ending: "${t}"
 
 // 5. prose word count: after the question line, up to the TERMINOLOGY label. Part 0 exempt.
 const POS = /^\**Part (\d+) of \?/, TERM = /^\**TERMINOLOGY\b/;
+const SHORT = /^\**Part \d+ of \?, a short detour\**$/;
 const lines = text.split('\n');
 const starts = [];
 lines.forEach((l, i) => { if (POS.test(l.trim())) starts.push(i); });
@@ -56,7 +59,8 @@ for (let k = 0; k < starts.length; k++) {          // every part in the file, no
     while (s < end && lines[s].trim() === '') s++;  // blank lines under the position line
     s++;                                            // the question line itself
     const n = lines.slice(s, end).join(' ').split(/\s+/).filter(Boolean).length;
-    if (n < 120 || n > 220) findings.push(`prose word count (Part ${part}): ${n} words (the range is 120 to 220)`);
+    const [min, max] = SHORT.test(lines[pos].trim()) ? [60, 120] : [120, 220];
+    if (n < min || n > max) findings.push(`prose word count (Part ${part}): ${n} words (the range is ${min} to ${max})`);
   }
 }
 

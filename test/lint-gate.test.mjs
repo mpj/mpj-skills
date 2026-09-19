@@ -53,7 +53,7 @@ test('rule 4 catches a probable three-item ending', () => {
 
 // Rule 5 is the one with the most moving parts, so it gets the most cases.
 const body = w => Array.from({ length: w }, (_, i) => `w${i}`).join(' ');
-const part = (n, words) => `**Part ${n} of ?**\n\nWhat is a thing?\n\n${body(words)}\n\n**TERMINOLOGY**\n`;
+const part = (n, words, suffix = '') => `**Part ${n} of ?${suffix}**\n\nWhat is a thing?\n\n${body(words)}\n\n**TERMINOLOGY**\n`;
 
 test('rule 5 measures prose between the question line and the label', () => {
   assert.deepEqual(lintText(part(1, 150)).findings, []);
@@ -61,6 +61,30 @@ test('rule 5 measures prose between the question line and the label', () => {
     ['prose word count (Part 1): 99 words (the range is 120 to 220)']);
   assert.deepEqual(lintText(part(1, 250)).findings,
     ['prose word count (Part 1): 250 words (the range is 120 to 220)']);
+});
+
+test('rule 5 gives explicitly marked short detours a bounded 60 to 120 words', () => {
+  for (const words of [60, 120]) {
+    assert.deepEqual(lintText(part(2, words, ', a short detour')).findings, []);
+  }
+  for (const words of [59, 121]) {
+    assert.deepEqual(lintText(part(2, words, ', a short detour')).findings,
+      [`prose word count (Part 2): ${words} words (the range is 60 to 120)`]);
+  }
+});
+
+test('rule 5 keeps ordinary detours at full length and applies each part\'s own range', () => {
+  const text = part(1, 150) + part(2, 90, ', a short detour') + part(3, 90, ', a detour');
+  assert.deepEqual(lintText(text).findings,
+    ['prose word count (Part 3): 90 words (the range is 120 to 220)']);
+  assert.deepEqual(lintText(part(4, 90, ', a short detour extra text')).findings,
+    ['prose word count (Part 4): 90 words (the range is 120 to 220)']);
+});
+
+test('rule 5 measures an unbolded short detour and still requires its glossary', () => {
+  assert.deepEqual(lintText(part(2, 90, ', a short detour').replaceAll('**', '')).findings, []);
+  assert.deepEqual(lintText(part(2, 90, ', a short detour').replace('**TERMINOLOGY**', '')).findings,
+    ['prose word count (Part 2): no TERMINOLOGY label before the next part or the end of the file; not measured']);
 });
 
 test('rule 5 exempts Part 0 and stays silent on a file with no position line', () => {
