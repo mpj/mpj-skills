@@ -35,11 +35,13 @@ The second is the register. A model told to write like an author writes an essay
 
 The interview, the ledger and the writer are cheap. The letters are not: a part that goes through the whole shop costs several model calls and several minutes between the reader's "continue" and the next screen of text. So the machinery runs at two settings, and an agent picks by asking one question. **Is this read once in the conversation, or kept?**
 
-**Every turn, always.** The map consultation and the masthead and welcome (each once per session), the interview, the ledger, the writer in the anchored voice, and the lint gate. The pillar additionally takes the root-conformance gate inside the veridicality check, every time, because it is the one delivery with no rung above it to correct it.
+**Every turn, always.** The map consultation and the masthead and welcome (each once per session), the interview, the ledger, the writer in the anchored voice, and the lint gate. A bare "go on" is recorded as no new evidence without an assessor call; answers with substance still go to the assessor. The pillar additionally takes the root-conformance gate inside the veridicality check, every time, because it is the one delivery with no rung above it to correct it.
 
-**When it will be kept, or when its facts matter.** The precision editor's letter and the writer's item-by-item reply; the tightening pass, on every second part (the fault it hunts accumulates); the veridicality check against the world on every concrete. A part that carries dates, counts, names, quotes or attributions gets the check whatever else it gets, because a false concrete does not care how casual the conversation was. The full protocol, letter by letter, is in `references/protocol.md`.
+**When it will be kept.** The precision editor's letter and the writer's item-by-item reply; the tightening pass, on every second part (the fault it hunts accumulates). **When its facts matter, even in conversation.** The veridicality check against the world on every concrete. A part that carries dates, counts, names, quotes or attributions gets that check whatever else it gets; those facts alone do not trigger the editorial letters. The leak check runs on every delivery. The full protocol, letter by letter, is in `references/protocol.md`.
 
 The reader can ask for the fuller setting by name at any point, and an agent about to write something the reader will paste somewhere else reaches for it without being asked.
+
+**Prepare the round trip before the welcome.** `references/protocol.md` specifies the continuation path and the seat briefs. Wire that path once, so the reader's next answer starts assessment or writing rather than another round of client construction. This prepares the machinery only; it writes no future part.
 
 ## Whose words reach the reader
 
