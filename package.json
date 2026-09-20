@@ -4,6 +4,7 @@
   "type": "module",
   "description": "Tests for the prose that ships in this marketplace. Nothing here is published with a plugin.",
   "scripts": {
+    "link:rung": "node scripts/link-rung.mjs",
     "test": "node --test test/*.test.mjs"
   }
 }

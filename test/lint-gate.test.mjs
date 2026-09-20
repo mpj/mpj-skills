@@ -10,10 +10,10 @@ const ROOT = new URL('..', import.meta.url).pathname;
 const SKILL = 'plugins/rung/skills/rung';
 const gate = extractGate(ROOT);
 
-function lintText(text) {
+function lintText(text, options) {
   const f = join(mkdtempSync(join(tmpdir(), 'rung-t-')), 'sample.md');
   writeFileSync(f, text);
-  return runGate(gate, f);
+  return runGate(gate, f, options);
 }
 
 test('the gate ships as exactly one code block and that block runs', () => {
@@ -73,6 +73,39 @@ test('rule 5 gives explicitly marked short detours a bounded 60 to 120 words', (
   }
 });
 
+test('conversation mode accepts the observed 223-word draft with an advisory', () => {
+  assert.deepEqual(lintText(part(6, 223), { conversation: true }), {
+    ok: true,
+    findings: [],
+    notes: ['prose word count (Part 6): 223 words (target maximum 220; conversational allowance 10)'],
+  });
+  assert.equal(lintText(part(6, 223)).ok, false, 'kept work retains the strict ceiling');
+});
+
+test('conversation mode bounds the allowance for each kind of part', () => {
+  for (const [suffix, max] of [['', 220], [', a detour', 220], [', a short detour', 120]]) {
+    assert.equal(lintText(part(2, max, suffix), { conversation: true }).notes.length, 0);
+    for (const extra of [1, 10]) {
+      const result = lintText(part(2, max + extra, suffix), { conversation: true });
+      assert.equal(result.ok, true);
+      assert.equal(result.notes.length, 1);
+    }
+    assert.equal(lintText(part(2, max + 11, suffix), { conversation: true }).ok, false);
+  }
+});
+
+test('conversational length advisories never hide another blocking finding', () => {
+  const result = lintText(part(1, 223) + '\n' + part(2, 131, ', a short detour'), { conversation: true });
+  assert.equal(result.ok, false);
+  assert.equal(result.notes.length, 1);
+  assert.deepEqual(result.findings,
+    ['prose word count (Part 2): 131 words (the range is 60 to 120; conversational maximum is 130)']);
+  assert.equal(lintText(part(1, 223) + '\nrobust', { conversation: true }).ok, false);
+  assert.equal(lintText(part(1, 119), { conversation: true }).ok, false);
+  assert.equal(lintText(part(2, 59, ', a short detour'), { conversation: true }).ok, false);
+  assert.equal(lintText(part(1, 223).replace('**TERMINOLOGY**', ''), { conversation: true }).ok, false);
+});
+
 test('rule 5 keeps ordinary detours at full length and applies each part\'s own range', () => {
   const text = part(1, 150) + part(2, 90, ', a short detour') + part(3, 90, ', a detour');
   assert.deepEqual(lintText(text).findings,
@@ -122,7 +155,8 @@ test('rule 6 catches the invisible hyphen that walks through rule 1', () => {
 
 // --- The skill's own files, against the exemption list it publishes ---
 
-const skillFiles = globSync(`${SKILL}/**/*.md`, { cwd: ROOT }).sort();
+// Locally fetched anchors are not shipped prose and have no published exemptions.
+const skillFiles = globSync(`${SKILL}/**/*.md`, { cwd: ROOT }).filter(f => !f.endsWith('.local.md')).sort();
 
 test('the published exemption block is the gate\'s own current output', () => {
   const doc = readFileSync(join(ROOT, GATE_DOC), 'utf8');

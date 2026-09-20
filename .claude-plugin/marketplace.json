@@ -50,7 +50,7 @@
       "name": "rung",
       "source": "./plugins/rung",
       "description": "A structured discussion that leaves one person understanding something: an interview and expert pillar, followed by reader-led parts and short clarifications in an anchored, checked voice. After Part 0, one provisional next part can be prepared while the reader reads, then reconciled with their actual reply.",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "author": {
         "name": "Mattias Petter Johansson",
         "url": "https://github.com/mpj"

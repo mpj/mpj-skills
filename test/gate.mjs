@@ -20,20 +20,23 @@ export function extractGate(repoRoot) {
   return path;
 }
 
-// Returns { ok, findings } for one file. The gate exits 1 with findings printed
-// and 0 with "ok clean", so a non-zero exit is a result and never an error.
-export function runGate(gatePath, filePath) {
+// Returns { ok, findings, notes } for one file. Advisories can accompany either
+// exit status; exit 1 means blocking findings, while exit 0 permits delivery.
+export function runGate(gatePath, filePath, { conversation = false } = {}) {
   let out;
+  let ok = true;
   try {
-    out = execFileSync(process.execPath, [gatePath, filePath], { encoding: 'utf8' });
-    return { ok: true, findings: [] };
+    out = execFileSync(process.execPath, [gatePath, filePath, ...(conversation ? ['--conversation'] : [])], { encoding: 'utf8' });
   } catch (err) {
     if (err.status !== 1) throw err;
+    ok = false;
     out = err.stdout;
   }
-  const findings = out.split('\n').map(l => l.trim()).filter(Boolean)
+  const lines = out.split('\n').map(l => l.trim()).filter(Boolean);
+  const notes = lines.filter(l => l.startsWith('note ')).map(l => l.slice(5));
+  const findings = ok ? [] : lines.filter(l => !l.startsWith('note '))
     .map(l => l.replace(/^x /, ''));
-  return { ok: false, findings };
+  return { ok, findings, notes };
 }
 
 // The leak check ships the same way the gate does: as the single js block inside

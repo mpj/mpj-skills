@@ -53,6 +53,15 @@ part, so someone landing from another tab knows where they stand and what the
 part is for, and a labelled block below it: terminology, summary, and the three
 moves (I understand, ask, or go on).
 
+Conversational continuations take two model calls before repairs: one to assess
+a substantive reply, then one to write the part and its closing question together.
+A bare "go on" or a qualifying short vocabulary detour needs only the writer,
+subject to pending assessment. The opening interviewer remains separate. Small
+length overruns of up to ten words are advisory in conversation; kept writing
+retains strict limits and its separate closing-question call. The waiting-time
+target is one to two minutes for an ordinary continuation, still to be measured
+in a live run.
+
 The prose comes from a shop of seats that argue by letter. The head writer
 continues verbatim passages of a real author rather than imitating a description
 of one, fetched once per machine and never committed to this repository; a structure advisor rules on the map, the pillar and the exit; a
@@ -77,15 +86,40 @@ own.
 /plugin install rung@mpj
 ```
 
-Or copy the skill directories under `plugins/*/skills/` into `~/.claude/skills/`.
+For a live local `rung` installation, run this from the checkout you want to use
+(Node.js 22 or later):
 
-OpenCode also discovers skills in `~/.claude/skills/`. A copied installation is
-a snapshot: pushing changes here does not update it. Refresh the complete skill
-directory, including `references/`, while preserving any `*.local.md` anchor
-files, then quit and restart OpenCode. Start a fresh rung session to avoid
-continuing with the old seat prompts. When installing from a feature branch,
-record its commit; the normal marketplace source does not include those changes
-until they reach its default branch.
+```sh
+npm run link:rung
+```
+
+This makes `~/.claude/skills/rung` a symlink to this checkout's complete skill
+directory, including `references/`. Both Claude Code and OpenCode discover that
+path. Source edits and pulls then reach the installed skill without another copy
+step. The helper preserves `*.local.md` anchors, refuses conflicting anchor
+contents, and backs up an existing install under `~/.claude/skill-backups/`, outside
+skill discovery. Repeating it for the same checkout is a no-op. An optional path
+argument selects a different installation location.
+
+Keep the linked checkout available. If it is a worktree, protect it from routine
+removal with `git worktree lock --reason 'Live rung skill source' /path/to/worktree`.
+To move the installation later, run the helper from the replacement checkout
+before retiring the old one. The link follows that checkout's contents, including
+uncommitted edits; it does not fetch remote commits or follow a different branch
+automatically. Pull the tracked branch to receive work pushed from another box.
+
+The dev VM uses this linked-install path. Its source is the protected worktree
+`/home/lion/workspace/mpj-skills-rung-faster`, branch
+`fix/rung-faster-conversation`. This replaces the copied snapshot found on
+2026-09-20; the separate Claude marketplace checkout was also stale, and is not
+the source for this installation.
+
+Already-running agents can retain loaded skill text and seat prompts. Quit and
+restart OpenCode and start a fresh rung session after an update; a symlink cannot
+rewrite a conversation's existing instructions. A feature-branch installation
+also precedes normal marketplace availability, which follows the default branch.
+Copying skill directories under `plugins/*/skills/` into `~/.claude/skills/` still
+works, but those copies remain snapshots and need manual refreshes.
 
 Each `SKILL.md` is a plain [Agent Skill](https://github.com/anthropics/skills) —
 prose, no scripts, no dependencies — so it works in any agent that reads the

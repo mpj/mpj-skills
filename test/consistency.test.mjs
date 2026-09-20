@@ -15,7 +15,7 @@ import { join, basename } from 'node:path';
 
 const ROOT = new URL('..', import.meta.url).pathname;
 const SKILL = 'plugins/rung/skills/rung';
-const files = globSync(`${SKILL}/**/*.md`, { cwd: ROOT }).sort();
+const files = globSync(`${SKILL}/**/*.md`, { cwd: ROOT }).filter(f => !f.endsWith('.local.md')).sort();
 const read = f => readFileSync(join(ROOT, f), 'utf8');
 const corpus = files.map(f => [f, read(f)]);
 
@@ -60,7 +60,7 @@ test('the two files that name the anchor cache agree on how it is spelled', () =
 });
 
 test('every anchor file that does ship says on its first line what it is', () => {
-  const shipped = globSync(`${SKILL}/references/anchors/*.md`, { cwd: ROOT });
+  const shipped = globSync(`${SKILL}/references/anchors/*.md`, { cwd: ROOT }).filter(f => !f.endsWith('.local.md'));
   assert.ok(shipped.length > 0, 'expected at least one shipped anchor file');
   for (const f of shipped) {
     const first = read(f).split('\n').find(l => l.trim() && !l.startsWith('#'));

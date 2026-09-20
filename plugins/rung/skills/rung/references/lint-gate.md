@@ -13,16 +13,20 @@ An agent runs these with whatever it has: a grep, a scripting runtime, its own r
 
 **Rule 5's short-detour range is 60 to 120 words.** It applies only when the position line is exactly `Part N of ?, a short detour`, optionally wrapped in asterisks for emphasis. Ordinary parts and ordinary detours keep the 120 to 220 range. The boundaries, glossary requirement and Part 0 exemption stay the same. Eligibility for the short form is a semantic check under `SKILL.md`; the gate only enforces the declared range. A short marker never waives any other rule.
 
+**Conversational overruns have a ten-word allowance.** The ranges above remain the writing targets. For read-once conversation, run `node style-lint.mjs <file> --conversation`: 221 to 230 words in an ordinary part, or 121 to 130 in a short detour, produces a recorded advisory and passes the length check. Never commission a rewrite solely for that advisory. A larger overrun still blocks, as does an underlength part or a missing glossary. All other rules still block. Kept work uses the default invocation without the flag and retains the strict ranges; a mixed file containing kept work uses that default too. Local assemblers must honor the same allowance instead of rejecting the draft before this gate sees it. Record advisories in the run log rather than adding machinery notes to the reader's part.
+
 **The code block below is the gate.** Extract it from the installed skill at session setup and keep it with that session's version. An older copy may lack the word-count rule or the short-detour range, so a familiar filename on disk is not evidence that it checks the current contract.
 
-The reference implementation, exit 0 clean and exit 1 with findings printed:
+The reference implementation, exit 0 allowing delivery (possibly with advisory notes) and exit 1 with blocking findings printed:
 
 ```js
 #!/usr/bin/env node
-// Usage: node style-lint.mjs <file>
+// Usage: node style-lint.mjs <file> [--conversation]
 import { readFileSync } from 'node:fs';
 const text = readFileSync(process.argv[2], 'utf8');
 const findings = [];
+const conversation = process.argv.slice(3).includes('--conversation');
+const notes = [];
 for (const [re, label] of [[/—/g, 'em dash'], [/\s-\s/g, 'spaced hyphen as dash']]) {
   const m = text.match(re); if (m) findings.push(`${label}: ${m.length}x`);
 }
@@ -60,7 +64,13 @@ for (let k = 0; k < starts.length; k++) {          // every part in the file, no
     s++;                                            // the question line itself
     const n = lines.slice(s, end).join(' ').split(/\s+/).filter(Boolean).length;
     const [min, max] = SHORT.test(lines[pos].trim()) ? [60, 120] : [120, 220];
-    if (n < min || n > max) findings.push(`prose word count (Part ${part}): ${n} words (the range is ${min} to ${max})`);
+    const allowance = conversation ? 10 : 0;
+    if (n < min || n > max + allowance) {
+      const extra = conversation ? `; conversational maximum is ${max + allowance}` : '';
+      findings.push(`prose word count (Part ${part}): ${n} words (the range is ${min} to ${max}${extra})`);
+    } else if (n > max) {
+      notes.push(`prose word count (Part ${part}): ${n} words (target maximum ${max}; conversational allowance ${allowance})`);
+    }
   }
 }
 
@@ -80,6 +90,7 @@ for (const [c, n] of [...seen].sort((a, b) => a[0]-b[0])) {
   findings.push(`non-ASCII ${hex} ${JSON.stringify(String.fromCodePoint(c))} (${n}x)${twin}`);
 }
 
+if (notes.length) console.log(notes.map(n => `  note ${n}`).join('\n'));
 if (findings.length) { console.log(findings.map(f => `  x ${f}`).join('\n')); process.exit(1); }
 console.log('  ok clean');
 ```

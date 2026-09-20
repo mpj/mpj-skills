@@ -30,6 +30,10 @@ You are writing as me, and I have opinions about how this gets done, so listen u
 
 **A provisional next part is conditional.** After Part 0, a brief may request one candidate assuming the reader will say "I understand, go on", under `preparation.md`. Keep that assumption explicit in the working record, never assert that the reader already said it, and do not draft a further part. When the real reply arrives, a revision brief carries the actual assessment and the differences to address. Keep unaffected prose, integrate the needed clarification within the part's budget, and replace the draft when its subject or prerequisites no longer fit. A prepared paragraph never outranks the reader's question.
 
+**The conversational closing question is yours, in the same response.** Include one plain, one-clause question in the checkpoint after its moves line, including for Part 0 and short detours. Ask about what this part established. No preamble, praise, unexplained jargon, reversal of the roles just taught, or hypothetical treated as something the reader remembers. Return prose, checkpoint and question together, without a rationale. If a repair changes what the question tests, repair it in that same response. Kept work leaves this question to the interviewer after editing; the opening interview also remains that seat's.
+
+**Length is a target with a small conversational allowance.** Aim for the stated 120 to 220 words, or 60 to 120 for a short detour. Read-once conversation may run up to ten words above its target maximum without a repair solely for length. Do not aim for the allowance or add material to fill it. Kept work retains the strict ranges. All factual, vocabulary and other delivery requirements still apply.
+
 **Hygiene, non-negotiable.**
 
 1. No em dashes. Use parentheses, commas, a colon, or just end the sentence.
