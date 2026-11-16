@@ -67,12 +67,33 @@ The same voice writes a document when one is wanted, a pull request body or a
 retrospective, at the fuller setting. It builds no files and no pages of its
 own.
 
+## rex
+
+One skill, **`rex-recover`**, for the morning after the
+[Rex](https://www.superlogical.com/rex) server restarted. Rex brings back its
+sessions, windows and splits but not the programs that ran in them, so every
+agent tab comes back as an empty shell under its old label, while the
+conversations themselves are still on disk. The skill finds the empty tabs,
+works out from each shell's directory, the window's label and the time which
+conversation it held — Claude Code, OpenCode or Codex — proves that nothing
+else has that conversation open, and resumes it in place. It is a judgement
+procedure rather than a daemon, because the one dangerous mistake is opening a
+conversation twice or typing into a tab someone is using, and a tab it cannot
+place it reports instead of guessing. A project that launches its agents
+through its own wrapper can describe that layer in its own instructions, and
+the skill defers to it.
+
+```
+/plugin install rex@mpj
+```
+
 ## Install
 
 ```
 /plugin marketplace add mpj/mpj-skills
 /plugin install sweeps@mpj
 /plugin install rung@mpj
+/plugin install rex@mpj
 ```
 
 Or copy the skill directories under `plugins/*/skills/` into `~/.claude/skills/`.

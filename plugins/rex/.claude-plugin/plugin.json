@@ -1,0 +1,12 @@
+{
+  "name": "rex",
+  "description": "Put coding-agent conversations back in their Rex windows after the Rex server restarted: find the tabs that came back as empty shells, work out which conversation each held, prove it is not open anywhere else, and resume it.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Mattias Petter Johansson",
+    "url": "https://github.com/mpj"
+  },
+  "homepage": "https://github.com/mpj/mpj-skills",
+  "repository": "https://github.com/mpj/mpj-skills",
+  "license": "MIT"
+}
