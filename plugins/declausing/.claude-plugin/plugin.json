@@ -1,0 +1,12 @@
+{
+  "name": "declausing",
+  "description": "Rewrite prose that reads as machine-written into prose that reads as written by someone who meant it, by applying Orwell's rules from \"Politics and the English Language\" (all but rule 5, so domain terms survive). Rewrites the text and reports what it cut.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Mattias Petter Johansson",
+    "url": "https://github.com/mpj"
+  },
+  "homepage": "https://github.com/mpj/mpj-skills",
+  "repository": "https://github.com/mpj/mpj-skills",
+  "license": "MIT"
+}

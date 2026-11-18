@@ -87,6 +87,19 @@ the skill defers to it.
 /plugin install rex@mpj
 ```
 
+## declausing
+
+One skill, **`declausing`**, for prose that reads as machine-written. It applies
+Orwell's rules from "Politics and the English Language" (all but rule 5, so a
+field's own terms survive), rewrites the text, and reports what it cut. It is
+subtractive by design: it takes out what nobody meant, and leaves the voice to
+whoever owns it. A sibling of the sweeps in spirit, but for a page rather than
+a repository.
+
+```
+/plugin install declausing@mpj
+```
+
 ## Install
 
 ```
@@ -94,6 +107,7 @@ the skill defers to it.
 /plugin install sweeps@mpj
 /plugin install rung@mpj
 /plugin install rex@mpj
+/plugin install declausing@mpj
 ```
 
 Or copy the skill directories under `plugins/*/skills/` into `~/.claude/skills/`.
