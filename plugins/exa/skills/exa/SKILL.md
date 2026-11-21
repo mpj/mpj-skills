@@ -36,10 +36,20 @@ exa raw /search '{"query":"...","type":"deep"}'       # anything the flags do no
 number at the start of the query is not read as the length. Pipe through `jq` to keep only what is needed:
 `exa search "..." | jq '.results[] | {title, url, publishedDate, highlights}'`.
 
-If the key is not in the environment, the most likely reason is that the shell
-is not interactive and the key is exported by `~/.zshrc` alone, which is how an
-agent's shell usually starts. Run the command through an interactive shell,
-`zsh -ic 'exa search "..."'`, and leave the dotfiles alone.
+If the key is not in the environment, the likely reason is that it is exported
+from `~/.zshrc`, which only an interactive shell reads, and an agent's shell is
+not interactive. `zsh -ic 'exa search "..."'` gets this one call through. Then
+tell the person, because they may not know, and offer the lasting fix: export
+the key from `~/.zshenv`, which every zsh reads. With their yes, add a line
+that reads the value from the file that already holds it rather than copying
+the value in, since `~/.zshenv` is often readable by anyone on the machine:
+
+```sh
+[ -z "$EXA_API_KEY" ] && export EXA_API_KEY="$(sed -n 's/^export EXA_API_KEY=//p' <file that holds it>)"
+```
+
+Check it in a clean shell before saying it works:
+`env -i HOME="$HOME" zsh -c '[ -n "$EXA_API_KEY" ] && echo set'`.
 
 ## The request
 

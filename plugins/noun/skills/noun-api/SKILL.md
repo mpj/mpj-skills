@@ -12,7 +12,11 @@ so an agent can write the call once and get it right. Two credentials live in
 the environment as `NOUN_API_KEY` and `NOUN_API_SECRET`, both 32 hex characters.
 Read them; do not echo them, log them, write them into a file that is committed,
 or put them in a URL. If they are missing, say so and stop; do not ask the
-person to paste them into the chat.
+person to paste them into the chat. If `zsh -ic` can see them and the agent's
+own shell cannot, they are exported from `~/.zshrc`, which only an interactive
+shell reads. Tell the person, and offer to export them from `~/.zshenv`
+instead, reading the values from the file that already holds them rather than
+copying them in.
 
 ## The request
 
