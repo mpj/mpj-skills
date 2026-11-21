@@ -22,6 +22,7 @@ test('without a key it exits 1 before any request, and says how to get one into 
   const err = JSON.parse(r.stderr);
   assert.match(err.error, /EXA_API_KEY is not set/);
   assert.match(err.hint, /zsh -ic/);
+  assert.match(err.hint, /~\/\.zshenv/, 'the hint must name the lasting fix, not only the workaround');
 });
 
 test('a malformed argument fails on its own, without needing the key', () => {

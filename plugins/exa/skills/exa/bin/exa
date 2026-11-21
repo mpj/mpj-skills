@@ -119,7 +119,7 @@ const [path, body] = await commands[cmd](pos, opt)
 
 const key = process.env.EXA_API_KEY
 if (!key) die("EXA_API_KEY is not set in this environment", {
-  hint: "On a Mac where it is exported only by ~/.zshrc, run the command through an interactive shell: zsh -ic 'exa search \"...\"'",
+  hint: "If ~/.zshrc exports it, only interactive shells see it. For now: zsh -ic 'exa search \"...\"'. To fix it for every shell, ask the person whether to export it from ~/.zshenv, reading the value from the file that holds it.",
 })
 
 let res

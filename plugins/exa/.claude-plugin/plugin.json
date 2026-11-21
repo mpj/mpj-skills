@@ -1,7 +1,7 @@
 {
   "name": "exa",
   "description": "The Exa web search API, as one skill and a dependency-free CLI: search with excerpts, read known URLs, get a cited answer, with the key from the environment and cheap defaults.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "Mattias Petter Johansson",
     "url": "https://github.com/mpj"

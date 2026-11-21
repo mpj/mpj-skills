@@ -30,7 +30,7 @@
       "name": "noun",
       "source": "./plugins/noun",
       "description": "The Noun Project icon API, as one skill: sign a request with the keys in the environment, search and fetch icons, download them in a colour, and mind the quota and the attribution.",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "author": {
         "name": "Mattias Petter Johansson",
         "url": "https://github.com/mpj"
@@ -50,7 +50,7 @@
       "name": "exa",
       "source": "./plugins/exa",
       "description": "The Exa web search API, as one skill and a dependency-free CLI: search with excerpts, read known URLs, get a cited answer, with the key from the environment and cheap defaults.",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "author": {
         "name": "Mattias Petter Johansson",
         "url": "https://github.com/mpj"
