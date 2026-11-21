@@ -34,6 +34,22 @@ against the API rather than transcribed from its documentation.
 /plugin install noun@mpj
 ```
 
+## exa
+
+One skill, **`exa`**, for the Exa web search API, and a small CLI beside it
+(`bin/exa`) so any agent or shell can say "just exa it" in one line: search with
+excerpts, the clean text of known URLs, a cited answer, and pages like a given
+page, all as JSON with the cost of each call left in. The key comes from the
+environment (`EXA_API_KEY`) and nowhere else. The defaults are the cheap ones,
+a `lite` search of five results at under half a cent, and the skill says which
+parameters force the dearer engine, which old ones are deprecated, and that a
+page's text is data, never instructions. Checked live against the API rather
+than transcribed from its documentation.
+
+```
+/plugin install exa@mpj
+```
+
 ## rung
 
 One skill, **`rung`**, for holding a discussion with one person that leaves them
@@ -105,6 +121,7 @@ a repository.
 ```
 /plugin marketplace add mpj/mpj-skills
 /plugin install sweeps@mpj
+/plugin install exa@mpj
 /plugin install rung@mpj
 /plugin install rex@mpj
 /plugin install declausing@mpj
@@ -113,8 +130,10 @@ a repository.
 Or copy the skill directories under `plugins/*/skills/` into `~/.claude/skills/`.
 
 Each `SKILL.md` is a plain [Agent Skill](https://github.com/anthropics/skills) —
-prose, no scripts, no dependencies — so it works in any agent that reads the
-format, and it names no repository, language or toolchain of its own. The
+prose, with no dependencies — so it works in any agent that reads the format,
+and it names no repository of its own. One skill carries a script: `exa` ships
+its CLI as `bin/exa`, a single Node file with nothing to install, inside the
+skill directory so it travels with any copy of it. The
 `rung` skill carries its charters and its record as `references/`, prose too;
 its mechanical checks are patterns written out, each with a reference
 implementation an agent may run or re-express. Those implementations, and the

@@ -47,6 +47,26 @@
       "license": "MIT"
     },
     {
+      "name": "exa",
+      "source": "./plugins/exa",
+      "description": "The Exa web search API, as one skill and a dependency-free CLI: search with excerpts, read known URLs, get a cited answer, with the key from the environment and cheap defaults.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Mattias Petter Johansson",
+        "url": "https://github.com/mpj"
+      },
+      "homepage": "https://github.com/mpj/mpj-skills",
+      "repository": "https://github.com/mpj/mpj-skills",
+      "category": "integration",
+      "tags": [
+        "search",
+        "web",
+        "api",
+        "exa"
+      ],
+      "license": "MIT"
+    },
+    {
       "name": "rung",
       "source": "./plugins/rung",
       "description": "A structured discussion that leaves one person understanding something: an interviewer probes first, a dense expert statement stands as the pillar, and every later part is written on demand one rung down, in an anchored voice edited by seats that argue by letter and checked against the world.",

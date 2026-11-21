@@ -1,0 +1,141 @@
+#!/usr/bin/env node
+// exa: the Exa web search API (api.exa.ai) from any shell, as JSON.
+// No dependencies; Node 18 or later. The key is read from EXA_API_KEY and
+// nowhere else, sent only as the x-api-key header, and never printed.
+
+const USAGE = `usage: exa <command> [options]
+
+  search <query>      ranked results with excerpts             (lite: $0.004)
+    -n, --num N         results, default 5; each above 10 costs $0.001
+    --type T            lite (default) | auto | deep-lite | deep
+    --text [CHARS]      page text instead of highlights, default 3000 chars
+    --no-contents       titles and urls only
+    --include a.com,b   only these domains or paths (anthropic.com/news, *.substack.com)
+    --exclude a.com,b   never these domains
+    --since DATE        published on or after DATE (YYYY-MM-DD)
+    --until DATE        published on or before DATE
+    --max-age-hours H   page content no older than H hours; 0 is live (needs auto)
+    --category C        news | company | publication | people | financial report | personal site
+  contents <url>...   clean text of known urls                 ($0.001 a page)
+    --text CHARS        default 3000
+    --highlights Q      excerpts relevant to Q instead of text
+    --max-age-hours H   as above
+  answer <question>   an answer with citations                 ($0.005)
+    --text              include each citation's page text
+  similar <url>       pages like this url; deprecated endpoint  ($0.004)
+    -n, --num N         default 5
+  raw <path> <json>   POST any body to any path; json may be - for stdin
+
+Output is the API's JSON on stdout, costDollars included. Errors go to stderr
+as JSON and exit 1. A url that fails in contents is still exit 0: read statuses.`
+
+const die = (error, extra = {}) => {
+  process.stderr.write(JSON.stringify({ error, ...extra }, null, 2) + "\n")
+  process.exit(1)
+}
+
+function parse(argv) {
+  const pos = [], opt = {}
+  const takesValue = new Set(["num", "type", "include", "exclude", "since", "until", "max-age-hours", "category", "highlights"])
+  for (let i = 0; i < argv.length; i++) {
+    const a = argv[i]
+    if (a === "-n") { opt.num = argv[++i]; continue }
+    if (!a.startsWith("--")) { pos.push(a); continue }
+    const [k, inline] = a.slice(2).split(/=(.*)/s)
+    if (inline !== undefined) opt[k] = inline
+    else if (takesValue.has(k)) opt[k] = argv[++i]
+    else if (k === "text" && /^\d+$/.test(argv[i + 1] ?? "")) opt[k] = argv[++i]
+    else opt[k] = true
+    if (opt[k] === undefined) die(`--${k} needs a value`)
+  }
+  return { pos, opt }
+}
+
+const int = (v, name) => {
+  if (!/^-?\d+$/.test(String(v))) die(`${name} must be a whole number, got ${v}`)
+  return Number(v)
+}
+const list = v => String(v).split(",").map(s => s.trim()).filter(Boolean)
+const date = v => {
+  if (!/^\d{4}-\d{2}-\d{2}/.test(v)) die(`dates are YYYY-MM-DD, got ${v}`)
+  return v.length === 10 ? `${v}T00:00:00.000Z` : v
+}
+const textOpt = v => ({ maxCharacters: v === true || v === undefined ? 3000 : int(v, "--text") })
+
+function search(pos, opt) {
+  const query = pos.join(" ")
+  if (!query) die("search needs a query")
+  const body = { query, type: opt.type ?? "lite", numResults: opt.num ? int(opt.num, "--num") : 5 }
+  if (!opt["no-contents"]) body.contents = opt.text ? { text: textOpt(opt.text) } : { highlights: true }
+  if (opt.include) body.includeDomains = list(opt.include)
+  if (opt.exclude) body.excludeDomains = list(opt.exclude)
+  if (opt.since) body.startPublishedDate = date(opt.since)
+  if (opt.until) body.endPublishedDate = date(opt.until)
+  if (opt.category) body.category = opt.category
+  if (opt["max-age-hours"] !== undefined) {
+    // lite answers 400 to maxAgeHours, with any value; auto is the cheapest type that takes it.
+    if (!opt.type) body.type = "auto"
+    body.contents = { ...(body.contents ?? { highlights: true }), maxAgeHours: int(opt["max-age-hours"], "--max-age-hours") }
+  }
+  return ["/search", body]
+}
+
+function contents(pos, opt) {
+  if (!pos.length) die("contents needs at least one url")
+  const body = { urls: pos }
+  if (opt.highlights) body.highlights = { query: String(opt.highlights) }
+  else body.text = textOpt(opt.text)
+  if (opt["max-age-hours"] !== undefined) body.maxAgeHours = int(opt["max-age-hours"], "--max-age-hours")
+  return ["/contents", body]
+}
+
+function answer(pos, opt) {
+  const query = pos.join(" ")
+  if (!query) die("answer needs a question")
+  return ["/answer", opt.text ? { query, text: true } : { query }]
+}
+
+function similar(pos, opt) {
+  if (pos.length !== 1) die("similar takes exactly one url")
+  return ["/findSimilar", { url: pos[0], numResults: opt.num ? int(opt.num, "--num") : 5 }]
+}
+
+async function raw(pos) {
+  const [path, json] = pos
+  if (!path?.startsWith("/") || json === undefined) die("raw takes a path starting with / and a JSON body")
+  const text = json === "-" ? await new Response(process.stdin).text() : json
+  try { return [path, JSON.parse(text)] } catch { die("raw body is not valid JSON") }
+}
+
+const [cmd, ...rest] = process.argv.slice(2)
+if (!cmd || cmd === "-h" || cmd === "--help" || cmd === "help") {
+  process.stdout.write(USAGE + "\n")
+  process.exit(cmd ? 0 : 1)
+}
+const commands = { search, contents, answer, similar, raw }
+if (!commands[cmd]) die(`unknown command ${cmd}`, { usage: USAGE })
+const { pos, opt } = parse(rest)
+const [path, body] = await commands[cmd](pos, opt)
+
+const key = process.env.EXA_API_KEY
+if (!key) die("EXA_API_KEY is not set in this environment", {
+  hint: "On a Mac where it is exported only by ~/.zshrc, run the command through an interactive shell: zsh -ic 'exa search \"...\"'",
+})
+
+let res
+try {
+  res = await fetch("https://api.exa.ai" + path, {
+    method: "POST",
+    headers: { "x-api-key": key, "content-type": "application/json" },
+    body: JSON.stringify(body),
+  })
+} catch (e) {
+  die(`could not reach api.exa.ai: ${e.cause?.code ?? e.message}`)
+}
+const text = await res.text()
+let data
+try { data = JSON.parse(text) } catch { data = { body: text.slice(0, 2000) } }
+const scrub = s => s.split(key).join("<EXA_API_KEY>")
+if (!res.ok) die(`Exa ${res.status}`, JSON.parse(scrub(JSON.stringify({ request: { path, body }, response: data }))))
+if (res.headers.get("deprecation")) process.stderr.write(`exa: ${path} is deprecated upstream; prefer search with a query describing the page\n`)
+process.stdout.write(JSON.stringify(data, null, 2) + "\n")
